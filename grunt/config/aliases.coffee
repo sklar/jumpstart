@@ -6,7 +6,7 @@ module.exports = (grunt) ->
 		'shell:bower'
 		# 'copy'
 
-		'images'
+		# 'imagemin'
 		'sass'
 		'autoprefixer'
 		'concat'

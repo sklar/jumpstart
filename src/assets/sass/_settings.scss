@@ -83,7 +83,7 @@ $base-emphasize: $black;
 $base-font-family: "Open Sans", Helvetica, sans-serif;
 
 // The base font size.
-$base-font-size: 14px;
+$base-font-size: 16px;
 
 // Set browser default font size.
 $base-font-size--browser: 16px;
@@ -194,7 +194,7 @@ $button-color--disable: $grey;
 $button-font-size: 13px;
 
 // Set large button font-size according to `$form-element-font-size--large`.
-$button-font-size--large: 18px;
+$button-font-size--large: 24px;
 
 // Set button indent.
 $button-indent: 20px;
@@ -203,7 +203,7 @@ $button-indent: 20px;
 $button-size: 29px;
 
 // Set large button height according to `$form-element-size--large`.
-$button-size--large: 37px;
+$button-size--large: 49px;
 
 // Set button margin.
 $button-space: 10px;
@@ -225,7 +225,7 @@ $button--primary-background--disable: #555;
 
 
 // Set secondary button color.
-$button--secondary-color: #fff;
+$button--secondary-color: $white;
 
 // Set secondary hovered button color.
 // $button--secondary-color--hover: $white;
@@ -351,7 +351,7 @@ $form-element-border-size: 1px;
 $form-element-font-size: 13px;
 
 // Set large form element font size.
-$form-element-font-size--large: 18px;
+$form-element-font-size--large: 16px;
 
 // Set form element padding.
 $form-element-indent: 10px;
@@ -373,7 +373,7 @@ $form-element-shadow--focus: inset 0 0 6px 0px lighten($black, 77%);
 $form-element-size: 29px;
 
 // Set large form element height.
-$form-element-size--large: 37px;
+$form-element-size--large: 49px;
 
 // Component Form/Group
 // =============================================================================

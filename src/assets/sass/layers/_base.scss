@@ -27,6 +27,7 @@ html {
 }
 
 body {
+    @extend .font-primary--light;
     background-color: $base-background;
     color: $base-color;
 }
@@ -116,7 +117,6 @@ hr {
 // =============================================================================
 
 a {
-    @extend .font-primary--semibold;
     @include link-underlined;
     color: $base-link;
 }

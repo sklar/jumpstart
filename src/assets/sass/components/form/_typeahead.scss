@@ -8,7 +8,7 @@
 // =============================================================================
 
 .form-typeahead {
-    border: $form-typeahead-border-size solid $form-typeahead-border;
+    // border: $form-typeahead-border-size solid $form-typeahead-border;
     border-radius: $form-typeahead-border-radius;
     // height: $form-typeahead-size;
     position: relative;
@@ -63,7 +63,19 @@
 // Form typeahead input field
 // =============================================================================
 
-%form-typeahead__field {}
+%form-typeahead__field {
+    font-style: italic;
+
+    &::-webkit-input-placeholder {
+        font-style: italic;
+    }
+    &::-moz-placeholder {
+        font-style: italic;
+    }
+    &:-ms-input-placeholder {
+        font-style: italic;
+    }
+}
 
 .form-typeahead__field {
     @extend %form-typeahead__field;
@@ -113,7 +125,8 @@
 // =============================================================================
 
 .form-typeahead__button {
-    border-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
     margin: 0;
 
     &,

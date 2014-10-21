@@ -8,7 +8,7 @@
 // =============================================================================
 
 .form-element {
-    border: $form-element-border-size solid $form-element-border;
+    // border: $form-element-border-size solid $form-element-border;
     border-radius: $form-element-border-radius;
     transition: box-shadow 0.2s ease;
 }
@@ -34,7 +34,7 @@
  */
 
 .form-element--large {
-    font-size: rem($form-element-font-size--large);
+    @include adjust-font-size-to($form-element-font-size--large);
     height: $form-element-size--large;
 }
 
@@ -68,7 +68,6 @@
         color: $red;
         content: "*";
         vertical-align: super;
-
     }
 }
 

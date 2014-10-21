@@ -17,10 +17,11 @@
  * List without bullets and padding.
  */
 
-.lst--reset {
+%lst--reset {
     padding: 0;
     li {
         list-style: none;
+        margin: 0;
         padding-left: 0;
     }
 }
@@ -30,10 +31,18 @@
  */
 
 .lst--inline {
-    @extend .lst--reset;
+    @extend %lst--reset;
     > li {
         display: inline-block;
     }
+}
+
+/**
+ * List with stacked items.
+ */
+
+.lst--stack {
+    @extend %lst--reset;
 }
 
 /**

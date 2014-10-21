@@ -69,21 +69,30 @@
 }
 
 /**
+ * Button, block.
+ */
+
+.btn--block {
+    display: block;
+    text-align: center;
+}
+
+/**
  * Button, multiple lines.
  */
 
-.btn--multiline {
-    @extend .font-primary--light;
+// .btn--multiline {
+//     @extend .font-primary--light;
 
-    height: auto;
-    padding-top: 5px;
-    text-transform: none;
-    white-space: normal;
+//     height: auto;
+//     padding-top: 5px;
+//     text-transform: none;
+//     white-space: normal;
 
-    @include ie-lte-9 {
-        height: auto;
-    }
-}
+//     @include ie-lte-9 {
+//         height: auto;
+//     }
+// }
 
 /**
  * Button large.

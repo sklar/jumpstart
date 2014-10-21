@@ -45,11 +45,31 @@
 .page__inset {
     @extend %ctr--center;
 
-    max-width: 1600px;
+    max-width: 1000px;
     padding: {
         left: $page-inset-indent;
         right: $page-inset-indent;
     }
+}
+
+/**
+ * Page inset, primary.
+ */
+
+.page__inset--primary {
+    @extend %ctr--center;
+    background-color: pink;
+    width: 60%;
+}
+
+/**
+ * Page inset, secondary.
+ */
+
+.page__inset--secondary {
+    @extend %ctr--center;
+    background-color: green;
+    width: 80%;
 }
 
 // Page head
@@ -79,7 +99,7 @@
 
 .page__main {
     background-color: #b0bec5;
-    color: #fff;
+    color: $white;
     min-height: 500px;
 }
 
@@ -89,31 +109,41 @@
 .page__foot {
     @extend %group;
 
-    padding-bottom: rhythm(2);
+    padding: rhythm(4) 0;
     // text-align: center;
 
     &,
     a {
-        color: #fff;
+        color: $page-foot-color;
     }
     a {
-        text-decoration: none;
-        transition: color 0.3s ease;
+        @include link-underlined(false);
     }
     a:focus,
     a:hover {
-        color: fade($page-foot-color, 80%);
-        text-decoration: underline;
+        color: rgba($page-foot-color, 0.75);
+        transition: color 0.3s ease;
     }
 }
 
 // Page foot primary
 // =============================================================================
 
-.page__foot__primary {}
+.page__foot__primary {
+    text-transform: uppercase;
+}
+
+// Page foot primary item
+// =============================================================================
+
+.page__foot__item {
+    @extend .lst--stack;
+}
 
 // Page foot secondary
 // =============================================================================
 
-.page__foot__secondary {}
+.page__foot__secondary {
+    font-size: 0.8em;
+}
 
