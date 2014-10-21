@@ -1,0 +1,85 @@
+/**
+ * Component Container.
+ * @author David Sklar <david.sklar@jumpshot.com>
+ */
+
+// =============================================================================
+// Container
+// =============================================================================
+
+%ctr {
+    @extend %group;
+    position: relative;
+
+    &:first-child {
+        margin-top: 0;
+    }
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+/**
+ * Modifiers.
+ */
+
+/**
+ * Container centered to its parent.
+ */
+
+%ctr--center {
+    margin: {
+        left: auto;
+        right: auto;
+    }
+}
+
+/**
+ * Container with `inline-block` justified ascendants.
+ * @see http://tympanus.net/codrops/2013/07/14/justified-and-vertically-centered-header-elements/
+ */
+
+// .ctr--justify {
+//  text-align: justify;
+//  &:after {
+//      content: "";
+//      display: inline-block;
+//      width: 100%;
+//  }
+// }
+
+/**
+ * Container with `inline-block` verticaly centered ascendants.
+ * @see http://css-tricks.com/centering-in-the-unknown/
+ */
+
+// .ctr--middle {
+//  &:before {
+//      content: "";
+//      display: inline-block;
+//      height: 100%;
+//      vertical-align: middle;
+//      width: 0;
+//  }
+// }
+
+/**
+ * States.
+ */
+
+// .is-component-state
+
+/**
+ * Context.
+ */
+
+// .has-component
+
+// =============================================================================
+// Subcomponents
+// =============================================================================
+
+// Subcomponent
+// =============================================================================
+
+// .component__subcomponent

@@ -1,0 +1,80 @@
+/**
+ * Component Navigation/Primary.
+ * @author David Sklar <david.sklar@jumpshot.com>
+ */
+
+// =============================================================================
+// Primary navigation
+// =============================================================================
+
+.nav-primary {
+    @extend .font-secondary--bold;
+    @extend .lst--inline;
+
+    // text-align: right;
+}
+
+/**
+ * Modifiers.
+ */
+
+// .component--modifier
+
+/**
+ * States.
+ */
+
+// .is-component-state
+
+/**
+ * Context.
+ */
+
+// .has-component
+
+// =============================================================================
+// Subcomponents
+// =============================================================================
+
+// Primary navigation item
+// =============================================================================
+
+.nav-primary__item {
+    margin-left: nth($navigation-primary-item-indent, 1);
+    text-transform: uppercase;
+
+    &:first-child {
+        margin-left: 0 !important;
+    }
+
+    a {
+        border-bottom: $navigation-primary-item-border-size solid transparent;
+        padding-bottom: 2px;
+        transition: border-bottom-color 0.3s ease;
+
+        &:focus,
+        &:hover {
+            border-bottom-color: $navigation-primary-item-border--hover;
+        }
+    }
+
+    // @media query test
+    @media (min-width: 540px) {
+        margin-left: nth($navigation-primary-item-indent, 2);
+    }
+}
+
+/**
+ * Modifiers.
+ */
+
+/**
+ * Primary navigation active item.
+ */
+
+.nav-primary__item--active {
+    a {
+        border-bottom-color: $navigation-primary-item-border--active !important;
+    }
+}
+

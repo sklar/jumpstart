@@ -1,0 +1,144 @@
+/**
+ * Component Toggle/Primary.
+ * @author David Sklar <david.sklar@jumpshot.com>
+ */
+
+// =============================================================================
+// Primary toggle
+// =============================================================================
+
+.tog-primary {
+    @extend .font-primary--semibold;
+
+    color: $toggle-primary-color;
+    cursor: pointer;
+    font-size: rem($toggle-primary-font-size);
+    margin-right: 0.5em;
+    text-decoration: none;
+    text-transform: uppercase;
+    white-space: nowrap;
+
+    &::before {
+        background:
+            $toggle-primary-background-color
+            url("../gfx/toggle-primary.gif")
+            center
+            no-repeat;
+        border-radius: 50%;
+        content: "";
+        display: inline-block;
+        height: $toggle-primary-size;
+        margin-right: 6px;
+        transform: translateY(-3px);
+        transition: background-color 0.3s ease;
+        vertical-align: middle;
+        width: $toggle-primary-size;
+    }
+
+    &:empty {
+        &,
+        &::before {
+            margin-right: 0;
+        }
+    }
+    &:active {
+        @extend .is-tog-primary-pressed;
+    }
+    &:focus {
+        @extend .is-tog-primary-focused;
+    }
+    &:hover {
+        @extend .is-tog-primary-hovered;
+    }
+    &[disabled] {
+        @extend .is-tog-primary-disabled;
+    }
+}
+
+/**
+ * Modifiers.
+ */
+
+// .component--modifier
+
+/**
+ * States.
+ */
+
+/**
+ * Primary toggle, hovered.
+ */
+
+.is-tog-primary-hovered {
+    &::before {
+        @extend %is-element-hovered;
+        // background-color: $toggle-primary-background-color--hover;
+        // background-image: data-uri("../../../build/static/theme/gfx/toggle-primary--active.gif");
+    }
+}
+
+/**
+ * Primary toggle, focused.
+ */
+
+.is-tog-primary-focused {
+    &::before {
+        @extend %is-element-focused;
+        // background-color: $toggle-primary-background-color--focus;
+        // background-image: data-uri("../../../build/static/theme/gfx/toggle-primary--active.gif");
+    }
+}
+
+/**
+ * Primary toggle, pressed.
+ */
+
+.is-tog-primary-pressed {
+    &::before {
+        @extend %is-element-pressed;
+        // background-color: $toggle-primary-background-color--active;
+        // background-image: data-uri("../../../build/static/theme/gfx/toggle-primary--active.gif");
+    }
+}
+
+/**
+ * Primary toggle, hovered + focused + pressed.
+ */
+
+.is-tog-primary-hovered,
+.is-tog-primary-focused,
+.is-tog-primary-pressed {
+    &::before {
+        background-color: $toggle-primary-background-color--active;
+        background-image: url("../gfx/toggle-primary--active.gif");
+    }
+}
+
+/**
+ * Primary toggle, disabled.
+ */
+
+.is-tog-primary-disabled {
+    color: $toggle-primary-color--disable;
+    cursor: not-allowed;
+    &::before {
+        @extend %is-element-disabled;
+        background-color: $toggle-primary-background-color--disable !important;
+        background-image: url("../gfx/toggle-primary--disabled.gif") !important;
+    }
+}
+
+/**
+ * Context.
+ */
+
+// .has-component
+
+// =============================================================================
+// Subcomponents
+// =============================================================================
+
+// Subcomponent
+// =============================================================================
+
+// .component__subcomponent

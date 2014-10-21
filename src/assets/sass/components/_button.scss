@@ -1,0 +1,213 @@
+/**
+ * Component Button.
+ * @author David Sklar <david.sklar@jumpshot.com>
+ */
+
+// =============================================================================
+// Button
+// =============================================================================
+
+.btn {
+    @extend .element;
+    @extend .font-primary--light;
+
+    border: none;
+    border-radius: $button-border-radius;
+    cursor: pointer;
+    font-size: rem($button-font-size);
+    height: $button-size;
+    line-height: 1.5;
+    margin-bottom: $button-space;
+    outline: 0;
+    padding: 5px $button-indent;
+    // text-transform: uppercase;
+    transition: background-color 0.2s ease;
+    vertical-align: middle;
+    white-space: nowrap;
+
+    &,
+    &:focus,
+    &:hover {
+        color: $button-color;
+        text-decoration: none;
+    }
+
+    &:active {
+        @extend .is-btn-pressed;
+    }
+    &:focus {
+        @extend .is-btn-focused;
+    }
+    &[disabled] {
+        @extend .is-btn-disabled;
+    }
+
+    @include ie-gte-9 {
+        padding-top: 4px;
+    }
+    @include ie-lte-9 {
+        height: $button-size - 1;
+        padding-top: 3px;
+    }
+}
+
+/**
+ * Modifiers.
+ */
+
+/**
+ * Button, decorator for `inline` elements.
+ */
+
+.btn--element {
+    display: inline-block;
+    padding-top: 5px;
+
+    @include ie-lte-9 {
+        padding-top: 4px;
+    }
+}
+
+/**
+ * Button, multiple lines.
+ */
+
+.btn--multiline {
+    @extend .font-primary--light;
+
+    height: auto;
+    padding-top: 5px;
+    text-transform: none;
+    white-space: normal;
+
+    @include ie-lte-9 {
+        height: auto;
+    }
+}
+
+/**
+ * Button large.
+ */
+
+.btn--large {
+    font-size: rem($button-font-size--large);
+    height: $button-size--large;
+
+    @include ie-lte-9 {
+        height: $button-size--large - 1;
+        // padding-top: 3px;
+    }
+}
+
+/**
+ * Button, primary.
+ */
+
+.btn--primary {
+    background-color: $button--primary-background;
+
+    &:hover {
+        // background-color: $button--primary-background--hover;
+        background-color: $button--primary-background--active;
+    }
+}
+
+/**
+ * Button, secondary (default).
+ */
+
+.btn--secondary {
+    background-color: $button--secondary-background;
+    color: $button--secondary-color;
+
+    &:hover {
+        // background-color: $button--secondary-background--hover;
+        // color: $button--secondary-color--hover;
+        background-color: $button--secondary-background--active;
+        color: $button--secondary-color--active;
+    }
+}
+
+/**
+ * States.
+ */
+
+/**
+ * Button, focused.
+ */
+
+.is-btn-focused {
+    @extend %is-element-focused;
+
+    // &.btn--primary {
+    //  background-color: $button--primary-background--focus;
+    // }
+    // &.btn--secondary {
+    //  background-color: $button--secondary-background--focus;
+    //  color: $button--secondary-color--focus;
+    // }
+}
+
+/**
+ * Button, pressed.
+ */
+
+.is-btn-pressed {
+    @extend %is-element-pressed;
+
+    // &.btn--primary {
+    //  background-color: $button--primary-background--active;
+    // }
+    // &.btn--secondary {
+    //  background-color: $button--secondary-background--active;
+    //  color: $button--secondary-color--active;
+    // }
+}
+
+/**
+ * Button, focused + pressed.
+ */
+
+.is-btn-focused,
+.is-btn-pressed {
+    &.btn--primary {
+        background-color: $button--primary-background--active;
+    }
+    &.btn--secondary {
+        background-color: $button--secondary-background--active;
+        color: $button--secondary-color--active;
+    }
+}
+
+/**
+ * Button, disabled.
+ */
+
+.is-btn-disabled {
+    @extend %is-element-disabled;
+
+    color: $button-color--disable !important;
+    cursor: not-allowed;
+
+    &.btn--primary {
+        background-color: $button--primary-background--disable !important;
+    }
+    &.btn--secondary {
+        background-color: $button--secondary-background--disable !important;
+    }
+}
+
+/**
+ * Context.
+ */
+
+// .has-component
+
+// =============================================================================
+// Subcomponents
+// =============================================================================
+
+// Subcomponent
+// =============================================================================
+
+// .component__subcomponent

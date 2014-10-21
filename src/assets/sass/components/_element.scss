@@ -1,0 +1,89 @@
+/**
+ * Component Element.
+ * @author David Sklar <david.sklar@jumpshot.com>
+ */
+
+// =============================================================================
+// Element
+// =============================================================================
+
+.element {
+    box-shadow: $element-shadow;
+
+    &:active,
+    &:focus,
+    &:hover,
+    &[disabled] {
+        // &:extend(.font-primary--bold);
+    }
+
+    &:active {
+        @extend %is-element-pressed;
+    }
+    &:focus {
+        @extend %is-element-focused;
+    }
+    &:hover {
+        @extend %is-element-hovered;
+    }
+    &[disabled] {
+        @extend %is-element-disabled;
+    }
+}
+
+/**
+ * Modifiers.
+ */
+
+// .component--modifier
+
+/**
+ * States.
+ */
+
+/**
+ * Element, focused.
+ */
+
+%is-element-focused {
+    box-shadow: $element-shadow--focus;
+}
+
+/**
+ * Element, hovered.
+ */
+
+%is-element-hovered {
+    box-shadow: $element-shadow--hover;
+}
+
+/**
+ * Element, pressed.
+ */
+
+%is-element-pressed {
+    box-shadow: $element-shadow--active !important;
+}
+
+/**
+ * Element, disabled.
+ */
+
+%is-element-disabled {
+    box-shadow: $element-shadow--disable !important;
+}
+
+/**
+ * Context.
+ */
+
+// .has-component
+
+// =============================================================================
+// Subcomponents
+// =============================================================================
+
+// Subcomponent
+// =============================================================================
+
+// .component__subcomponent

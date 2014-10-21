@@ -1,0 +1,51 @@
+/**
+ * Component Form.
+ * @author David Sklar <david.sklar@jumpshot.com>
+ */
+
+// =============================================================================
+// Form
+// =============================================================================
+
+// .component
+
+/**
+ * Modifiers.
+ */
+
+// .component--modifier
+
+/**
+ * States.
+ */
+
+// .is-component-state
+
+/**
+ * Context.
+ */
+
+// .has-component
+
+// =============================================================================
+// Subcomponents
+// =============================================================================
+
+// Form row
+// =============================================================================
+
+.form__row {
+    margin-bottom: $form-row-indent;
+}
+
+/**
+ * Modifiers.
+ */
+
+/**
+ * Form row, condesed.
+ */
+
+.form__row--condensed {
+    margin-bottom: 1/4 * $form-row-indent;
+}

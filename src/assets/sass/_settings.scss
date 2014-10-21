@@ -1,0 +1,497 @@
+/**
+ * Settings.
+ * @author David Sklar <david.sklar$jumpshot.com>
+ */
+
+// =============================================================================
+// Compass
+// =============================================================================
+
+/**
+ * Browser support.
+ */
+
+// Set browser support.
+$legacy-support-for-ie:      false;
+$legacy-support-for-mozilla: false;
+$legacy-support-for-webkit:  false;
+
+$experimental-support-for-microsoft: false;
+$experimental-support-for-mozilla:   false;
+$experimental-support-for-opera:     false;
+$experimental-support-for-webkit:    false;
+
+/**
+ * Vertical rhythm.
+ */
+
+// Set rhythm lenght unit.
+$rhythm-unit: "rem";
+
+// Set `rem` units fallback.
+$rem-with-px-fallback: false;
+
+// =============================================================================
+// Susy
+// =============================================================================
+
+// Set grid columns background color.
+$grid-background-column-color: rgba(0, 0, 0, 0.1);
+
+// =============================================================================
+// Colors
+// =============================================================================
+
+// Original color scheme.
+$blue:          #2e3192;
+$blue--bright:  #25aae1; // primary
+$blue--dark:    #150958; // primary
+$blue--light:   #266cb5;
+$chartruese:    #d7df21; // primary
+$green--dark:   #00a651;
+$green--light:  #71bf44;
+$grey--dark:    #58585a; // primary
+$orange--dark:  #f3742f;
+$orange--light: #fcb040;
+$red:           #ed1c24;
+
+// New color scheme.
+$black:         #000;
+$cyan:          #00bcd4;
+$lime:          #cddc39;
+$lime--dark:    #afb42b;
+$grey:          #777;
+$grey--dark:    #323232;
+$grey--light:   #cecece;
+$orange:        #ff9100;
+$white:         #fff;
+
+// =============================================================================
+// Base
+// =============================================================================
+
+// The base background color.
+$base-background: #263238;
+
+// The base text color.
+$base-color: #777;
+
+// Emphasized text color.
+$base-emphasize: $black;
+
+// The base font family.
+$base-font-family: "Open Sans", Helvetica, sans-serif;
+
+// The base font size.
+$base-font-size: 14px;
+
+// Set browser default font size.
+$base-font-size--browser: 16px;
+
+// The base font weight.
+$base-font-weight: 400;
+
+// The amount lists and blockquotes are indented.
+$base-indent: 40px;
+
+// The base line height.
+$base-line-height: 23px;
+
+// Set base link color.
+$base-link: $black;
+
+// Set base type scale.
+// $see http://type-scale.com/?size=14&scale=1.250
+// 34px, 27px, 22px, 18px, 14px, 11px
+$base-type-scale:
+    2.441,
+    1.953,
+    1.563,
+    1.25,
+    1,
+    0.8
+;
+
+/**
+ * Base spacer.
+ */
+
+// // Set spacer border color.
+// $base-spacer: #c8dae5;
+
+// // Set spacer border width.
+// $base-spacer-size: 1px;
+
+// =============================================================================
+// Layout
+// =============================================================================
+
+// // Set layout widths.
+// $layout-width--narrow: 640px;
+// $layout-width--medium: 960px;
+// $layout-width--wide: 1450px;
+
+// // Set layout grid.
+// $layout-total-columns: 20;
+// $layout-column-width: 20px;
+// $layout-gutter-width: 20px;
+// $layout-grid-padding: 10px;
+
+// // Set placeholder size.
+// $placeholder-size: rhythm(3);
+
+// Set layout Box model sizes.
+// Do NOT OVERUSE (keep small number) and use grid system instead.
+// @example
+//      `.mt-0  { margin-top: 0; }`
+//      `.w-50p { width: 50%; }`
+//      `.p-10i { padding: 10px !important; }`
+// $layout-model-sizes:
+//  width           60 100,
+//  max-width       500,
+//  min-height      135 315,
+//  padding         0,
+//  padding-bottom  20,
+//  padding-left    5 10 20,
+//  padding-right   10,
+//  padding-top     10 20,
+//  margin          0,
+//  margin-bottom   0i 5 10 25 30 50,
+//  margin-left     5 40,
+//  margin-right    0 5 10 20,
+//  margin-top      0i 5 10 20 30 50
+// ;
+
+$layout-model-sizes:
+    width           100p,
+    min-width       300,
+    margin          0,
+    padding-right   10
+;
+
+// =============================================================================
+// Content
+// =============================================================================
+
+
+// =============================================================================
+// Components
+// =============================================================================
+
+// Component Button
+// =============================================================================
+
+// Set button border radius.
+$button-border-radius: 2px;
+
+// Set button text color.
+$button-color: $white;
+
+// Set disabled button text color.
+$button-color--disable: $grey;
+
+// Set button font-size according to `$form-element-font-size`.
+$button-font-size: 13px;
+
+// Set large button font-size according to `$form-element-font-size--large`.
+$button-font-size--large: 18px;
+
+// Set button indent.
+$button-indent: 20px;
+
+// Set button height according to `$form-element-size`.
+$button-size: 29px;
+
+// Set large button height according to `$form-element-size--large`.
+$button-size--large: 37px;
+
+// Set button margin.
+$button-space: 10px;
+
+// Set primary button background.
+$button--primary-background: #546e7a;
+
+// Set primary hovered button background.
+// $button--primary-background--hover: $black;
+
+// Set primary focused button background.
+// $button--primary-background--focus: $black;
+
+// Set primary active button background.
+$button--primary-background--active: $black;
+
+// Set primary disabled button background.
+$button--primary-background--disable: #555;
+
+
+// Set secondary button color.
+$button--secondary-color: #fff;
+
+// Set secondary hovered button color.
+// $button--secondary-color--hover: $white;
+
+// Set secondary focused button color.
+// $button--secondary-color--focus: $white;
+
+// Set secondary active button color.
+$button--secondary-color--active: $white;
+
+// Set secondary button background.
+$button--secondary-background: #78909c;
+
+// Set secondary hovered button background.
+$button--secondary-background--hover: $grey;
+
+// Set secondary focused button background.
+$button--secondary-background--focus: $grey;
+
+// Set secondary active button background.
+$button--secondary-background--active: $grey;
+
+// Set secondary disabled button background.
+$button--secondary-background--disable: $grey--light;
+
+
+// Set button box shadow according to `$element-shadow`.
+$button-box-shadow: 0 1px 0 0 lighten($black, 77%);
+
+// Set hovered button box shadow according to `$element-shadow--hover`.
+$button-box-shadow--hover: 0 1px 1px lighten($black, 77%);
+
+// Set focused button box shadow according to `$element-shadow--focus`.
+$button-box-shadow--focus: 0 3px 3px lighten($black, 77%);
+
+// Set active button box shadow according to `$element-shadow--active`.
+$button-box-shadow--active: 0 6px 3px lighten($black, 90%);
+
+// Set disabled button box shadow according to `$element-shadow--disable`.
+$button-box-shadow--disable: none;
+
+// Component Button group
+// =============================================================================
+
+// Set space between buttons in group.
+$button-group-space: 10px;
+
+// Component Cursor
+// =============================================================================
+
+$cursor-types:
+    default,
+    pointer
+;
+
+// Component Dropdown
+// =============================================================================
+
+// Set dropdown text color.
+$dropdown-color: $black;
+
+// Set dropdown font size.
+$dropdown-font-size: 12px;
+
+// Set dropdown indent.
+$dropdown-indent: 20px;
+
+// Set dropdown hovered item background.
+$dropdown-item-background--hover: $grey--light;
+
+// Set dropdown panel background.
+$dropdown-panel-background: $white;
+
+// Set dropdown panel box shadow.
+$dropdown-panel-box-shadow: 0 0 3px lighten($black, 77%);
+
+// Set dropdown head font size.
+$dropdown-head-font-size: 18px;
+
+// Component Element
+// =============================================================================
+
+// Set element shadow.
+$element-shadow: 0 1px 0 0 lighten($black, 77%);
+
+// Set hovered element shadow.
+$element-shadow--hover: 0 1px 1px lighten($black, 77%);
+
+// Set focused element shadow.
+$element-shadow--focus: 0 3px 3px lighten($black, 77%);
+
+// Set active element shadow.
+$element-shadow--active: 0 6px 3px lighten($black, 90%);
+
+// Set disabled element shadow.
+$element-shadow--disable: none;
+
+// Component Form
+// =============================================================================
+
+// Set form row margin.
+$form-row-indent: 20px;
+
+// Component Form/Element
+// =============================================================================
+
+// Set disabled form element color.
+$form-element-color--disable: $grey;
+
+// Set form element border color.
+$form-element-border: $grey;
+
+// Set disabled form element border color.
+$form-element-border--disable: $grey--light;
+
+// Set form element border radius.
+$form-element-border-radius: $button-border-radius;
+
+// Set form element border width.
+$form-element-border-size: 1px;
+
+// Set form element font size.
+$form-element-font-size: 13px;
+
+// Set large form element font size.
+$form-element-font-size--large: 18px;
+
+// Set form element padding.
+$form-element-indent: 10px;
+
+// Set form element width (default 100%).
+$form-element-lengths:
+    short  5em,
+    mean   20em,
+    long   40em
+;
+
+// Set form element placeholder color.
+$form-element-placeholder-color: $grey--light;
+
+// Set focused form element shadow.
+$form-element-shadow--focus: inset 0 0 6px 0px lighten($black, 77%);
+
+// Set form element height.
+$form-element-size: 29px;
+
+// Set large form element height.
+$form-element-size--large: 37px;
+
+// Component Form/Group
+// =============================================================================
+
+// Set form group addon background.
+$form-group-addon-background: lighten($grey--light, 15%);
+
+// Component Form/Typeahead
+// =============================================================================
+
+// Set typeahead border color.
+$form-typeahead-border: $form-element-border;
+
+// Set typeahead border radius.
+$form-typeahead-border-radius: $form-element-border-radius;
+
+// Set typeahead border size.
+$form-typeahead-border-size: $form-element-border-size;
+
+// Set typeahead height.
+// $form-typeahead-size: $form-element-size + 2 * $form-element-border-size;
+
+// Set typeahead field text color.
+$form-typeahead-field-color: $black;
+
+// Set typeahead field text color.
+$form-typeahead-field-color--suggest: $form-element-placeholder-color;
+
+// Set typeahead button width.
+// $form-typeahead-button-size: 130px;
+
+// Component Navigation/Primary
+// =============================================================================
+
+// Set primary navigation active item border color.
+$navigation-primary-item-border--active: $blue--bright;
+
+// Set primary navigation hovered item border color.
+$navigation-primary-item-border--hover: $white;
+
+// Set primary navigation item border width.
+$navigation-primary-item-border-size: 2px;
+
+// Set primary navigation item indent.
+$navigation-primary-item-indent: 20px, 40px;
+
+// Component Page
+// =============================================================================
+
+// Set page wrap background.
+$page-wrap-background: #eee;
+
+// Set page inset indent amount.
+$page-inset-indent: 20px;
+
+// Set page header background color.
+$page-head-background: #ebf0eb;
+
+// Set page feature background.
+$page-feature-background: $white;
+
+// Set page footer color.
+$page-foot-color: $white;
+
+// Component Panel
+// =============================================================================
+
+// Set panel background.
+$panel-background: $white;
+
+// Set panel box shadow.
+$panel-box-shadow: 0 1px 1px 0 fade($black, 20%);
+
+// Set panel indent.
+$panel-indent: 20px;
+
+// Component Toggle/Primary
+// =============================================================================
+
+// Set primary toggle background.
+$toggle-primary-background-color: $grey--light;
+
+// Set hovered primary toggle background.
+// $toggle-primary-background-color--hover: $grey;
+
+// Set focused primary toggle background.
+// $toggle-primary-background-color--focus: $grey;
+
+// Set active primary toggle background.
+$toggle-primary-background-color--active: $grey;
+
+// Set disabled primary toggle background.
+$toggle-primary-background-color--disable: $grey--light;
+
+// Set primary toggle text color.
+$toggle-primary-color: $grey;
+
+// Set primary disabled toggle text color.
+$toggle-primary-color--disable: $grey--light;
+
+// Set primary toggle font size.
+$toggle-primary-font-size: 13px;
+
+// Set primary toggle size.
+$toggle-primary-size: 35px;
+
+// Component Toggle/Secondary
+// =============================================================================
+
+// Set secondary toggle text color.
+$toggle-secondary-color: $base-color;
+
+// Set secondary toggle border size.
+$toggle-secondary-border-size: 2px;
+
+// Set secondary toggle font size.
+$toggle-secondary-font-size: 14px;
+
+// Set secondary toggle size.
+$toggle-secondary-size: 16px;
+

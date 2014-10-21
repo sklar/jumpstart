@@ -1,0 +1,58 @@
+/**
+ * Component List.
+ * @author David Sklar <david.sklar@jumpshot.com>
+ */
+
+// =============================================================================
+// List
+// =============================================================================
+
+// .component
+
+/**
+ * Modifiers.
+ */
+
+/**
+ * List without bullets and padding.
+ */
+
+.lst--reset {
+    padding: 0;
+    li {
+        list-style: none;
+        padding-left: 0;
+    }
+}
+
+/**
+ * List with `inline-block` lineal descendats.
+ */
+
+.lst--inline {
+    @extend .lst--reset;
+    > li {
+        display: inline-block;
+    }
+}
+
+/**
+ * States.
+ */
+
+// .is-component-state
+
+/**
+ * Context.
+ */
+
+// .has-component
+
+// =============================================================================
+// Subcomponents
+// =============================================================================
+
+// Subcomponent
+// =============================================================================
+
+// .component__subcomponent

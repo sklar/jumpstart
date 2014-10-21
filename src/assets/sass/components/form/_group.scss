@@ -1,0 +1,92 @@
+/**
+ * Component Form/Group.
+ * @author David Sklar <david.sklar@jumpshot.com>
+ */
+
+// =============================================================================
+// Form Group
+// =============================================================================
+
+.form-group {
+    display: table;
+    width: 100%;
+}
+
+/**
+ * Modifiers.
+ */
+
+// .component--modifier
+
+/**
+ * States.
+ */
+
+/**
+ * Form group, disabled.
+ */
+
+.is-form-group-disabled {
+    border-color: $form-element-border--disable;
+    color: $form-element-color--disable;
+
+    .form-group__addon {
+        @extend .is-form-element-disabled;
+    }
+}
+
+/**
+ * Form group, readonly.
+ */
+
+.is-form-group-readonly {
+    @extend .is-form-group-disabled;
+}
+
+/**
+ * Context.
+ */
+
+// .has-component
+
+// =============================================================================
+// Subcomponents
+// =============================================================================
+
+// Form Group element
+// =============================================================================
+
+.form-group__element {
+    display: table-cell;
+
+    &:first-child {
+        border-bottom-right-radius: 0;
+        border-top-right-radius: 0;
+    }
+    &:last-child {
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 0;
+    }
+    &:not(:first-child):not(:last-child) {
+        border-radius: 0;
+    }
+}
+
+// Form Group addon
+// =============================================================================
+
+.form-group__addon {
+    @extend .form-element;
+    @extend .form-group__element;
+
+    background-color: $form-group-addon-background;
+    font-size: rem($form-element-font-size);
+    padding: 0 $form-element-indent;
+
+    &:first-child {
+        border-right: 0;
+    }
+    &:last-child {
+        border-left: 0;
+    }
+}

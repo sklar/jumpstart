@@ -1,0 +1,143 @@
+/**
+ * Component Toggle/Secondary.
+ * @author David Sklar <david.sklar@jumpshot.com>
+ */
+
+// =============================================================================
+// Secondary toggle
+// =============================================================================
+
+.tog-secondary {
+    color: $toggle-secondary-color;
+    cursor: pointer;
+    font-size: rem($toggle-secondary-font-size);
+    margin-right: 0.5em;
+    text-decoration: underline;
+    white-space: nowrap;
+
+    // &::before {
+    //  background-color: $toggle-secondary-color;
+    //  border: $toggle-secondary-border-size solid transparent;
+    //  border-radius: 50%;
+    //  box-sizing: border-box;
+    //  content: "";
+    //  display: inline-block;
+    //  height: $toggle-secondary-size;
+    //  margin-right: 7px;
+    //  width: $toggle-secondary-size;
+    //  vertical-align: middle;
+    // }
+
+    &:active {
+        @extend .is-tog-secondary-pressed;
+    }
+    &:focus {
+        @extend .is-tog-secondary-focused;
+    }
+    &:hover {
+        @extend .is-tog-secondary-hovered;
+    }
+    &[disabled] {
+        @extend .is-tog-secondary-disabled;
+    }
+}
+
+/**
+ * Modifiers.
+ */
+
+// .component--modifier
+
+/**
+ * States.
+ */
+
+/**
+ * Secondary toggle, in other than default state.
+ */
+
+.is-tog-secondary-state {
+    @extend .font-primary--semibold;
+    // text-decoration: none;
+}
+
+/**
+ * Secondary toggle, focused.
+ */
+
+.is-tog-secondary-focused {
+    @extend .is-tog-secondary-state;
+
+    // &::before,
+    .tog-secondary__shape {
+        @extend %is-element-focused;
+    }
+}
+
+/**
+ * Secondary toggle, hovered.
+ */
+
+.is-tog-secondary-hovered {
+    // @extend .is-tog-secondary-state;
+
+    // &::before,
+    .tog-secondary__shape {
+        @extend %is-element-hovered;
+    }
+}
+
+/**
+ * Secondary toggle, pressed.
+ */
+
+.is-tog-secondary-pressed {
+    @extend .is-tog-secondary-state;
+
+    // &::before,
+    .tog-secondary__shape {
+        @extend %is-element-pressed;
+    }
+}
+
+/**
+ * Secondary toggle, disabled.
+ */
+
+.is-tog-secondary-disabled {
+    @extend .is-tog-secondary-state;
+    cursor: not-allowed;
+
+    // &::before,
+    .tog-secondary__shape {
+        @extend %is-element-disabled;
+        background: none;
+        border-color: $toggle-secondary-color;
+    }
+}
+
+/**
+ * Context.
+ */
+
+// .has-component
+
+// =============================================================================
+// Subcomponents
+// =============================================================================
+
+// Secondary toggle shape (bullet)
+// =============================================================================
+
+.tog-secondary__shape {
+    background-color: $toggle-secondary-color;
+    border: $toggle-secondary-border-size solid transparent;
+    border-radius: 50%;
+    box-sizing: border-box;
+    content: "";
+    display: inline-block;
+    height: $toggle-secondary-size;
+    margin-right: 5px;
+    vertical-align: middle;
+    width: $toggle-secondary-size;
+}

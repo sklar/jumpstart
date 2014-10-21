@@ -1,0 +1,73 @@
+/**
+ * Content (Typography, Utilities).
+ * @author David Sklar <david.sklar@jumpshot.com>
+ */
+
+// Set content text colors list.
+// $content-text-colors: () !default;
+
+// =============================================================================
+// Typography
+// =============================================================================
+
+// Heading imitators (mimic heading styles)
+// =============================================================================
+
+@each $heading in (h1 h2 h3 h4 h5) {
+    .con-#{$heading} {
+        @extend #{$heading};
+    }
+}
+
+// =============================================================================
+// Utilities
+// =============================================================================
+
+.con-normal {
+    font-style: normal;
+    font-weight: normal;
+}
+
+.con-small { font-size: 0.8em; }
+.con-large { font-size: 1.2em; }
+
+.con-bold   { font-weight: bold; }
+.con-italic { font-style: italic; }
+
+.con-upper { text-transform: uppercase; }
+.con-lower { text-transform: lowercase; }
+
+.con-left   { text-align: left !important; }
+.con-center { text-align: center !important; }
+.con-right  { text-align: right !important; }
+
+.con-top            { vertical-align: top !important; }
+.con-middle         { vertical-align: middle !important; }
+.con-baseline       { vertical-align: baseline !important; }
+.con-text-bottom    { vertical-align: text-bottom !important; }
+.con-bottom         { vertical-align: bottom !important; }
+
+.con-nowrap { white-space: nowrap; }
+
+// .con-emphasize {
+//     color: $base-emphasize;
+// }
+// .con-emphasize--bold {
+//     @extend .con-bold;
+//     @extend .con-emphasize;
+// }
+
+.con-hidden { visibility: hidden; }
+
+// .con-rounded {
+//     @include rounded;
+// }
+
+/**
+ * Content for screen readers only.
+ * Usefull where `.lay-off` doesn't work, i.e. form elements.
+ */
+
+.con-reader {
+    @extend %reader;
+}

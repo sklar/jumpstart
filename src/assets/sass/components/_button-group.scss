@@ -1,0 +1,107 @@
+/**
+ * Component Button group.
+ * @author David Sklar <david.sklar@jumpshot.com>
+ */
+
+// =============================================================================
+// Button group
+// =============================================================================
+
+.btn-group {
+    .btn {
+        // margin-bottom: $button-group-space;
+        margin-right: $button-group-space;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
+
+/**
+ * Modifiers.
+ */
+
+/**
+ * Button group, buttons aligned left.
+ */
+
+.btn-group--left {
+    @extend .btn-group;
+    .btn {
+        &:last-child {
+            margin-right: $button-group-space;
+        }
+    }
+}
+
+/**
+ * Button group, buttons aligned right.
+ */
+
+.btn-group--right {
+    @extend .btn-group;
+    .btn {
+        margin: {
+            left: $button-group-space;
+            right: 0;
+        }
+        &:first-child {
+            margin-left: $button-group-space;
+        }
+    }
+}
+
+/**
+ * Button group, tight.
+ */
+
+.btn-group--tight {
+    .btn {
+        border-radius: 0;
+        margin: {
+            left: 0;
+            right: 0;
+        }
+        padding: {
+            left: 0.5 * $button-indent;
+            right: 0.5 * $button-indent;
+        }
+
+        &:first-of-type {
+            border-bottom-left-radius: $button-border-radius;
+            border-top-left-radius: $button-border-radius;
+            padding-left: $button-indent;
+        }
+        &:last-of-type {
+            border-bottom-right-radius: $button-border-radius;
+            border-top-right-radius: $button-border-radius;
+            padding-right: $button-indent;
+        }
+
+        // &:active,
+        // &:focus {
+        //  box-shadow: none !important;
+        // }
+    }
+}
+
+/**
+ * States.
+ */
+
+// .is-component-state
+
+/**
+ * Context.
+ */
+
+// .has-component
+
+// =============================================================================
+// Subcomponents
+// =============================================================================
+
+// Subcomponent
+// =============================================================================
+
+// .component__subcomponent

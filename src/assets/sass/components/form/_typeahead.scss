@@ -1,0 +1,137 @@
+/**
+ * Component Form/Typeahead.
+ * @author David Sklar <david.sklar@jumpshot.com>
+ */
+
+// =============================================================================
+// Form Typeahead
+// =============================================================================
+
+.form-typeahead {
+    border: $form-typeahead-border-size solid $form-typeahead-border;
+    border-radius: $form-typeahead-border-radius;
+    // height: $form-typeahead-size;
+    position: relative;
+
+    [type="text"] {
+        border: none;
+    }
+
+    .lay-table,
+    .lay-cell {
+        width: 100%;
+    }
+    .lay-cell {
+        vertical-align: middle;
+    }
+}
+
+/**
+ * Modifiers.
+ */
+
+/**
+ * Form typeahead large.
+ */
+
+.form-typeahead--large {
+    %form-typeahead__field {
+        @extend .form-element--large;
+    }
+
+    .form-typeahead__button {
+        @extend .btn--large;
+    }
+}
+
+/**
+ * States.
+ */
+
+// .is-component-state
+
+/**
+ * Context.
+ */
+
+// .has-component
+
+// =============================================================================
+// Subcomponents
+// =============================================================================
+
+// Form typeahead input field
+// =============================================================================
+
+%form-typeahead__field {}
+
+.form-typeahead__field {
+    @extend %form-typeahead__field;
+
+    background: none;
+    color: $form-typeahead-field-color;
+    left: 0;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+}
+
+/**
+ * Modifiers.
+ */
+
+/**
+ * Form typeahead input field, preface.
+ */
+
+.form-typeahead__field--preface {
+    @extend %form-typeahead__field;
+
+    @include ie-lte-9 {
+        height: $form-element-size - 1;
+    }
+}
+
+/**
+ * Form typeahead input field, suggest.
+ */
+
+.form-typeahead__field--suggest {
+    @extend .form-typeahead__field;
+    color: $form-typeahead-field-color--suggest;
+}
+
+/**
+ * Form typeahead input field, input.
+ */
+
+.form-typeahead__field--input {
+    @extend .form-typeahead__field;
+}
+
+// Form typeahead button
+// =============================================================================
+
+.form-typeahead__button {
+    border-radius: 0;
+    margin: 0;
+
+    &,
+    &:active,
+    &:focus,
+    &:hover {
+        box-shadow: none !important;
+    }
+}
+
+// Form typeahead result
+// =============================================================================
+
+.form-typeahead__result {
+    cursor: pointer;
+    left: 0;
+    margin: 0;
+    overflow: auto;
+    right: 0;
+    top: 1px;
+}

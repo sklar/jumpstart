@@ -1,0 +1,88 @@
+/**
+ * Component Form/Element.
+ * @author David Sklar <david.sklar@jumpshot.com>
+ */
+
+// =============================================================================
+// Form Element
+// =============================================================================
+
+.form-element {
+    border: $form-element-border-size solid $form-element-border;
+    border-radius: $form-element-border-radius;
+    transition: box-shadow 0.2s ease;
+}
+
+/**
+ * Modifiers.
+ */
+
+/**
+ * Form element length.
+ */
+
+.form-element {
+    @each $length in $form-element-lengths {
+        &--#{nth($length, 1)} {
+            max-width: nth($length, 2);
+        }
+    }
+}
+
+/**
+ * Form element large.
+ */
+
+.form-element--large {
+    font-size: rem($form-element-font-size--large);
+    height: $form-element-size--large;
+}
+
+/**
+ * States.
+ */
+
+/**
+ * Form element, focused.
+ */
+
+.is-form-element-focused {
+    box-shadow: $form-element-shadow--focus;
+}
+
+/**
+ * Form element, disabled.
+ */
+
+.is-form-element-disabled {
+    border-color: $form-element-border--disable;
+    color: $form-element-color--disable;
+}
+
+/**
+ * Form element, required.
+ */
+
+.is-form-element-required {
+    &::after {
+        color: $red;
+        content: "*";
+        vertical-align: super;
+
+    }
+}
+
+/**
+ * Context.
+ */
+
+// .has-component
+
+// =============================================================================
+// Subcomponents
+// =============================================================================
+
+// Subcomponent
+// =============================================================================
+
+// .component__subcomponent

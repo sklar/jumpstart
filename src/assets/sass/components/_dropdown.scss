@@ -1,0 +1,239 @@
+/**
+ * Component Dropdown.
+ * @author David Sklar <david.sklar@jumpshot.com>
+ */
+
+// =============================================================================
+// Dropdown
+// =============================================================================
+
+.drop {
+    @extend .font-primary--light;
+    @include prevent-flicker;
+
+    display: inline-block;
+    font-size: rem($dropdown-font-size);
+    line-height: 1.5;
+    margin-bottom: rhythm();
+
+    ul {
+        @extend .lst--reset;
+    }
+
+    .drop__item,
+    .drop__item__region {
+        display: block;
+        position: relative;
+    }
+
+    .drop__item:hover,
+    .is-drop__item-pressed {
+        & > .drop__item__region {
+            background-color: $dropdown-item-background--hover;
+        }
+    }
+
+    &,
+    .drop__item__region {
+        color: $dropdown-color;
+    }
+    .drop__item__region {
+        background-color: transparent;
+        padding: 6px $dropdown-indent;
+        text-decoration: none;
+        transition: background-color 0.2s ease;
+
+        &:focus,
+        &:hover {
+            background-color: $grey--light;
+        }
+    }
+
+    .btn {
+        vertical-align: baseline;
+    }
+}
+
+/**
+ * Modifiers.
+ */
+
+/**
+ * Dropdown, cascade.
+ */
+
+.drop--cascade {
+    .drop__panel {
+        margin-bottom: 0;
+        // padding-bottom: 10px;
+
+        .drop__panel {
+            display: none;
+            margin: 0;
+            left: 100%;
+            top: 0;
+            transform: translateX(1px);
+
+            @include ie-gte-9 {
+                transform: translate(0, -1px);
+            }
+        }
+    }
+
+    .drop__item:hover > .drop__panel {
+        display: block;
+    }
+
+    .drop__item:hover {
+        > .drop__item__region > .icon--after {
+            transform: rotate(90deg);
+        }
+    }
+
+    .drop__item:not(.is-drop__item-pressed) {
+        > .drop__item__region > .icon--before::before {
+            content: none;
+        }
+    }
+
+    .drop__item__region {
+        padding-right: 2.5 * $dropdown-indent;
+        white-space: nowrap;
+    }
+
+    .icon--before {
+        left: 0.5 * $dropdown-indent;
+        position: absolute;
+    }
+    .icon--after {
+        position: absolute;
+        right: $dropdown-indent;
+        transform-origin: 80% 50%;
+        transition: transform 0.2s ease;
+    }
+}
+
+/**
+ * Dropdown, tree.
+ */
+
+.drop--tree {
+    @extend .drop__panel;
+
+    ul {
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    .drop__item:hover,
+    .is-drop__item-pressed {
+        & > .drop__item__region:not(a) {
+            background-color: transparent;
+        }
+    }
+
+    .drop__item__region {
+        margin: {
+            left: (-1) * $dropdown-indent;
+            right: (-1) * $dropdown-indent;
+        }
+        padding: {
+            left: 2 * $dropdown-indent;
+            right: 2 * $dropdown-indent;
+        }
+    }
+}
+
+/**
+ * States.
+ */
+
+// .is-component-state
+
+/**
+ * Context.
+ */
+
+/**
+ * Dropdown, with end-point option item.
+ */
+
+.has-drop-end-point {
+    .drop__item__region {
+        padding-left: 1.5 * $dropdown-indent;
+    }
+}
+
+// =============================================================================
+// Subcomponents
+// =============================================================================
+
+// Dropdown panel
+// =============================================================================
+
+.drop__panel {
+    background-color: $dropdown-panel-background;
+    box-shadow: $dropdown-panel-box-shadow;
+    min-width: 170px;
+    padding: 10px $dropdown-indent 15px $dropdown-indent;
+    position: absolute;
+
+    @include ie-gte-9 {
+        border: 1px solid lighten($black, 90%);
+        box-shadow: none;
+    }
+}
+
+// Dropdown item
+// =============================================================================
+
+.drop__item {
+    margin: 0;
+}
+
+/**
+ * States.
+ */
+
+/**
+ * Dropdown item, pressed (selected).
+ */
+
+.is-drop__item-pressed {}
+
+// Dropdown item title
+// =============================================================================
+
+.drop__item__title {
+    @extend .font-primary--semibold;
+    display: block;
+}
+
+// Dropdown item region
+// =============================================================================
+
+.drop__item__region {
+    font-weight: inherit;
+}
+
+// Dropdown head
+// =============================================================================
+
+.drop__head {
+    @extend .font-primary--light;
+    font-size: rem($dropdown-head-font-size);
+
+    margin-bottom: 3px;
+
+    &:first-child {
+        margin-top: 0;
+    }
+}
+
+// Dropdown control
+// =============================================================================
+
+.drop__control {
+    margin-right: -100%;
+}

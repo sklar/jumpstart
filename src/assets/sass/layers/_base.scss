@@ -1,0 +1,301 @@
+/**
+ * Base-level tags (body, p, etc.)
+ * @see http://smacss.com/book/type-base
+ * @author David Sklar <david.sklar@jumpshot.com>
+ */
+
+/**
+ * 1. Set all (pseudo)elements `box-sizing` to `border-box`.
+ */
+
+*,
+*:after,
+*:before {
+    box-sizing: border-box;;
+}
+
+/**
+ * 1. Webkit has a bug that prevents line-height being set in `rem` on <html>;
+ *  To work around this and simplify output, we can set initial line-height
+ *  in ems for all relative rhythm units.
+ */
+
+html {
+    font-family: $base-font-family;
+    font-size: $base-font-size / $base-font-size--browser * 100%;
+    line-height: $base-line-height / $base-font-size * 1em; /* 1 */
+}
+
+body {
+    background-color: $base-background;
+    color: $base-color;
+}
+
+// =============================================================================
+// Typography
+// =============================================================================
+
+// Headings h1-h6
+// =============================================================================
+
+%heading {
+    @extend .font-primary--light;
+    @include leader;
+    @include trailer(0.5);
+
+    color: $black;
+    display: block;
+}
+
+@for $i from 1 through 5 {
+    h#{$i} {
+        @extend %heading;
+    }
+}
+
+h1 {
+    @include adjust-font-size-to(
+        nth($base-type-scale, 1) * $base-font-size,
+        1.75
+    );
+    @include trailer(1.5);
+    margin-top: 0;
+}
+
+h2 {
+    @include adjust-font-size-to(
+        nth($base-type-scale, 2) * $base-font-size,
+        1.5
+    );
+    @include trailer;
+}
+
+h3 {
+    @include adjust-font-size-to(
+        nth($base-type-scale, 3) * $base-font-size,
+        1.25
+    );
+    @include trailer(0.75);
+}
+
+h4 {
+    @include adjust-font-size-to(
+        nth($base-type-scale, 4) * $base-font-size,
+        1.125
+    );
+}
+
+h5 {
+    @include adjust-font-size-to(nth($base-type-scale, 5) * $base-font-size);
+    text-transform: uppercase;
+}
+
+// Block elements
+// =============================================================================
+
+address,
+p,
+pre {
+    @extend %rhythm;
+}
+
+address {
+    font-style: normal;
+}
+
+// blockquote {
+//  @extend %bqt;
+// }
+
+hr {
+     @extend %rhythm;
+     border: 0;
+}
+
+// Inline elements
+// =============================================================================
+
+a {
+    @extend .font-primary--semibold;
+    @include link-underlined;
+    color: $base-link;
+}
+
+b,
+strong {
+    @extend .font-primary--semibold;
+    color: $black;
+}
+
+em,
+i {
+    color: $black;
+}
+
+// q {
+//  quotes: "„" "“" "‚" "‘";
+// }
+
+// =============================================================================
+// Lists
+// =============================================================================
+
+ol,
+ul {
+    @extend %rhythm;
+    padding-left: $base-indent;
+}
+
+li {
+    margin-bottom: rhythm(0.25);
+}
+
+li > ol,
+li > ul {
+    margin: {
+        bottom: rhythm(0.5);
+        top: rhythm(0.25);
+    }
+}
+
+// =============================================================================
+// Form elements
+// =============================================================================
+
+fieldset {
+    @extend %rhythm;
+
+    border: 0;
+    padding: 0;
+}
+
+label {
+    cursor: pointer;
+    display: inline-block;
+}
+
+input,
+select,
+textarea {
+    font-size: rem($form-element-font-size);
+
+    height: $form-element-size;
+    line-height: inherit;
+    outline: none;
+    padding: 0 $form-element-indent;
+    width: 100%;
+}
+
+input[type="text"] {
+    text-overflow: ellipsis;
+}
+
+input[type="number"] {
+    text-align: right;
+}
+
+input[type="reset"],
+input[type="submit"] {
+    width: auto;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="number"],
+select,
+textarea {
+    @extend .form-element;
+
+    &:focus:not([readonly]) {
+        @extend .is-form-element-focused;
+    }
+    &[disabled],
+    &[readonly] {
+        @extend .is-form-element-disabled;
+    }
+}
+
+[disabled],
+[readonly] {
+    cursor: not-allowed !important;
+}
+
+/**
+ * Checkbox, Radio
+ * @see %form-pseudoelement
+ */
+
+input[type="checkbox"],
+input[type="radio"] {
+    // @extend %reader;
+    height: auto;
+    width: auto;
+}
+
+/**
+ * Select
+ */
+
+// select {
+//  @extend %form-element--gradient;
+//  padding-right: 0;
+// }
+
+/**
+ * Textarea
+ * 1. Allow only vertical resize.
+ */
+
+textarea {
+    height: auto;
+    padding: {
+        bottom: rhythm(0.25);
+        top: rhythm(0.25);
+    }
+    resize: vertical; /* 1 */
+}
+
+/**
+ * Placeholder color.
+ * @see http://css-tricks.com/snippets/css/style-placeholder-text/
+ */
+
+::-webkit-input-placeholder {
+    color: $grey--light;
+}
+
+::-moz-placeholder {
+    color: $grey--light;
+}
+
+:-ms-input-placeholder {
+    color: $grey--light;
+}
+
+/**
+ * Button
+ */
+
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+    line-height: $base-line-height;
+}
+
+// =============================================================================
+// Tables
+// =============================================================================
+
+table {
+    @extend %rhythm;
+    border-collapse: separate;
+}
+
+th {
+    text-align: left;
+}
+
+td {
+    vertical-align: top;
+}

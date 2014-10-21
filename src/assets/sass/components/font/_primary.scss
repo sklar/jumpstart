@@ -1,0 +1,64 @@
+/**
+ * Component Font/Primary.
+ * @author David Sklar <david.sklar@jumpshot.com>
+ */
+
+// =============================================================================
+// Primary font
+// =============================================================================
+
+.font-primary {
+    font-family: $base-font-family;
+}
+
+/**
+ * Modifiers.
+ */
+
+/**
+ * Primary font, bold.
+ */
+
+.font-primary--bold {
+    @extend .font-primary;
+    font-weight: 700;
+}
+
+/**
+ * Primary font, semibold.
+ */
+
+.font-primary--semibold {
+    @extend .font-primary;
+    font-weight: 600;
+}
+
+/**
+ * Primary font, light.
+ */
+
+.font-primary--light {
+    @extend .font-primary;
+    font-weight: 300;
+}
+
+/**
+ * States.
+ */
+
+// .is-component-state
+
+/**
+ * Context.
+ */
+
+// .has-component
+
+// =============================================================================
+// Subcomponents
+// =============================================================================
+
+// Subcomponent
+// =============================================================================
+
+// .component__subcomponent

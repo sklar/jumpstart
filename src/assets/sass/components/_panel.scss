@@ -1,0 +1,44 @@
+/**
+ * Component Panel.
+ * @author David Sklar <david.sklar@jumpshot.com>
+ */
+
+// =============================================================================
+// Panel
+// =============================================================================
+
+.panel {
+    @extend %ctr;
+
+    background-color: $panel-background;
+    box-shadow: $panel-box-shadow;
+    margin-bottom: 20px;
+    padding: $panel-indent;
+}
+
+/**
+ * Modifiers.
+ */
+
+// .component--modifier
+
+/**
+ * States.
+ */
+
+// .is-component-state
+
+/**
+ * Context.
+ */
+
+// .has-component
+
+// =============================================================================
+// Subcomponents
+// =============================================================================
+
+// Subcomponent
+// =============================================================================
+
+// .component__subcomponent

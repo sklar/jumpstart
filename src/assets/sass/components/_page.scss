@@ -1,0 +1,119 @@
+/**
+ * Component Page.
+ * @author David Sklar <david.sklar@jumpshot.com>
+ */
+
+// =============================================================================
+// Page
+// =============================================================================
+
+// .component
+
+/**
+ * Modifiers.
+ */
+
+// .component--modifier
+
+/**
+ * States.
+ */
+
+// .is-component-state
+
+/**
+ * Context.
+ */
+
+// .has-component
+
+// =============================================================================
+// Subcomponents
+// =============================================================================
+
+// Page wrap
+// =============================================================================
+
+.page__wrap {
+    background-color: $page-wrap-background;
+    padding-bottom: 20px;
+}
+
+// Page inset
+// =============================================================================
+
+.page__inset {
+    @extend %ctr--center;
+
+    max-width: 1600px;
+    padding: {
+        left: $page-inset-indent;
+        right: $page-inset-indent;
+    }
+}
+
+// Page head
+// =============================================================================
+
+.page__head {
+    background-color: $page-head-background;
+    padding: {
+        bottom: 10px;
+        top: 20px;
+    }
+}
+
+// Page head logo
+// =============================================================================
+
+.page__head__logo {
+    margin-top: 0;
+
+    a {
+        font-weight: inherit;
+    }
+}
+
+// Page main
+// =============================================================================
+
+.page__main {
+    background-color: #b0bec5;
+    color: #fff;
+    min-height: 500px;
+}
+
+// Page foot
+// =============================================================================
+
+.page__foot {
+    @extend %group;
+
+    padding-bottom: rhythm(2);
+    // text-align: center;
+
+    &,
+    a {
+        color: #fff;
+    }
+    a {
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+    a:focus,
+    a:hover {
+        color: fade($page-foot-color, 80%);
+        text-decoration: underline;
+    }
+}
+
+// Page foot primary
+// =============================================================================
+
+.page__foot__primary {}
+
+// Page foot secondary
+// =============================================================================
+
+.page__foot__secondary {}
+

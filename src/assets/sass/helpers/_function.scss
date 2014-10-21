@@ -1,0 +1,59 @@
+/**
+ * Helpers/Function.
+ * @author David Sklar <david.sklar@jumpshot.com>
+ */
+
+// =============================================================================
+// Functions
+// =============================================================================
+
+// Unit conversions
+// =============================================================================
+
+/**
+ * Converts `px` to `em` units.
+ *
+ * @param {Number} $target
+ * @param {Number} $context - Context `font-size`
+ *
+ * @returns {String}
+ *
+ * @example scss
+ *  .selector {
+ *      font-size: em(24);
+ *  }
+ */
+
+@function em($target, $context: $base-font-size) {
+    @return $target / $context + 0em;
+}
+
+/**
+ * Converts `px` to `rem` units.
+ *
+ * @param {Number} $target
+ * @param {Number} $context  (@base-font-size) - Context `font-size`
+ *
+ * @returns {String}
+ *
+ * @example scss
+ *  .selector {
+ *      font-size: rem(20);
+ *  }
+ */
+
+@function rem($target, $context: $base-font-size) {
+    @return $target / $base-font-size + 0rem;
+}
+
+/**
+ * Strips units.
+ *
+ * @param {String} $value
+ *
+ * @returns {Number} - Unitless value
+ */
+
+@function strip-unit($value) {
+    @return $value / ($value * 0 + 1);
+}

@@ -1,0 +1,79 @@
+/**
+ * Helpers/Extend.
+ * @author David Sklar <david.sklar@jumpshot.com>
+ */
+
+/**
+ * Enables simple element debugging.
+ */
+
+%debug {
+    background-color: rgba(0, 255, 0, 0.5) !important;
+}
+
+// Content
+// =============================================================================
+
+/**
+ * Hides element while preserve its accessibility.
+ */
+
+%reader {
+    @include visibility;
+}
+
+/**
+ * Restores element visibility.
+ */
+
+%reader--reset {
+    @include visibility(true);
+}
+
+// Layout
+// =============================================================================
+
+/**
+ * Provides `microfix` for group of elements.
+ *
+ * @requires {Mixin} microfix
+ */
+
+%group {
+    @include microfix;
+}
+
+/**
+ * Provides image replacement.
+ *
+ * @alias replace-image
+ *
+ * @requires {Mixin} replace-image
+ */
+
+%image-replacement {
+    @include replace-image;
+}
+
+/**
+ * Sets element dimensions to 100%.
+ *
+ * @requires {Mixin} max
+ */
+
+%maximize {
+    @include max;
+}
+
+// Vertical rhythm
+// =============================================================================
+
+/**
+ * Provides common rhythm setting.
+ *
+ * @requires {Function} get-rhythm
+ */
+
+%rhythm {
+    margin: 0 0 rhythm();
+}

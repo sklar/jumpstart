@@ -1,0 +1,290 @@
+/**
+ * Helpers/Mixin.
+ * @author David Sklar <david.sklar@jumpshot.com>
+ */
+
+// =============================================================================
+// Mixins
+// =============================================================================
+
+// Browsers compatibility
+// =============================================================================
+
+/**
+ * Provides `IE lte 9` content block.
+ *
+ * @param {String} $content
+ */
+
+@mixin ie-lte-9 {
+    .ie-lte-9 & {
+        @content;
+    }
+}
+
+/**
+ * Provides `IE gte 9` content block.
+ *
+ * @param {String} $content
+ */
+
+@mixin ie-gte-9 {
+    @media screen and (min-width: e("0\0")) {
+        @content;
+    }
+}
+
+/**
+ * Prevents weird webkit flickering on transformed or transitioned elements.
+ *
+ * @see http://goo.gl/zs2j9H
+ *
+ */
+
+@mixin prevent-flicker {
+    -webkit-backface-visibility: hidden;
+}
+
+// Content
+// =============================================================================
+
+/**
+ * Provides image replacement.
+ *
+ * @see http://goo.gl/8RChP8
+ */
+
+@mixin replace-image {
+    overflow: hidden;
+    text-indent: 200%;
+    white-space: nowrap;
+}
+
+/**
+ * Sets rounded element.
+ *
+ * @param {Number} $radius (50%)
+ */
+
+@mixin rounded($radius: 50%) {
+    background-clip: padding-box;
+    border-radius: $radius;
+}
+
+/**
+ * Handles element visibility and preserves accessibility.
+ *
+ * @param {Number} $reset  (false)
+ */
+
+@mixin visibility($reset: false) {
+    @if $reset {
+        border: inherit;
+        clip: auto;
+        height: auto;
+        overflow: visible;
+        padding: inherit;
+        position: static;
+        vertical-align: inherit;
+        width: auto;
+    } @else {
+        border: 0;
+        clip: rect(0, 0, 0, 0);
+        height: 0;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        vertical-align: text-top;
+        width: 0;
+    }
+}
+
+// Layout
+// =============================================================================
+
+/**
+ * Enables hardware accelerated animations. Use carefully!
+ *
+ * @see http://goo.gl/RAKdca
+ * @see http://goo.gl/yPSJrj
+ */
+
+@mixin accelerate {
+    transform: translateZ(0);
+}
+
+/**
+ * Sets element maximum dimensions.
+ *
+ * @param {Number} $width  (100%)
+ * @param {Number} $height (100%)
+ */
+
+@mixin max($width: 100%,$height: 100%) {
+    max-height: $width;
+    max-width: $height;
+}
+
+/**
+ * Sets element minimum dimensions.
+ *
+ * @param {Number} $width  (0)
+ * @param {Number} $height (0)
+ */
+
+@mixin min($width: 0, $height: 0) {
+    min-height: $width;
+    min-width: $height;
+}
+
+/**
+ * Provides Box model helpers classes.
+ *
+ * @param {List} $sizes
+ *
+ * @example scss
+ *  `.mt-0  { margin-top: 0; }`
+ *  `.w-50p { width: 50%; }`
+ *  `.p-10i { padding: 10px !important; }`
+ */
+
+@mixin model($sizes: ()) {
+    // Property map (key -> name)
+    $maps:
+        w      width,
+        minw   min-width,
+        maxw   max-width,
+        h      height,
+        minh   min-height,
+        maxh   max-height,
+        p      padding,
+        pt     padding-top,
+        pr     padding-right,
+        pb     padding-bottom,
+        pl     padding-left,
+        m      margin,
+        mt     margin-top,
+        mr     margin-right,
+        mb     margin-bottom,
+        ml     margin-left;
+    $key: "";
+
+    @if length($sizes) {
+        @each $size in $sizes {
+            // Get property key (i.e. shortcut used in selector name)
+            @each $map in $maps {
+                @if nth($size, 1) == nth($map, 2) {
+                    $key: nth($map, 1);
+                }
+            }
+
+            // Set property values
+            @each $value in nth($size, 2) {
+                $val: if(unit($value) == i, strip-unit($value), $value);
+
+                .#{$key}--#{$val} {
+                    @if unit($value) == i {
+                        // px units !important
+                        #{nth($size, 1)}: strip-unit($value) + px !important;
+                    }  @elseif unit($value) == p {
+                        // % units
+                        #{nth($size, 1)}: strip-unit($value) + 0%;
+                    }  @elseif unit($value) == pi {
+                        // % units !important
+                        #{nth($size, 1)}: strip-unit($value) + 0% !important;
+                    } @else {
+                        // px units
+                        #{nth($size, 1)}: $value + px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/**
+ * Provides Micro clearfix.
+ *
+ * @see http://nicolasgallagher.com/micro-clearfix-hack/
+ *
+ * Known support: Firefox 3.5+, Safari 4+, Chrome, Opera 9+, IE 6+
+ *
+ * 1. The space content is one way to avoid an Opera bug when the
+ *  contenteditable attribute is included anywhere else in the document.
+ *  Otherwise it causes space to appear at the top and bottom of elements
+ *  that are clearfixed.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *  `:before` to contain the top-margins of child elements.
+ */
+
+@mixin microfix {
+    &::after,
+    &::before {
+        content: ""; /* 1 */
+        display: table; /* 2 */
+    }
+    &::after {
+        clear: both;
+    }
+}
+
+/**
+ * Set element dimensions.
+ *
+ * @param {Number} $width
+ * @param {Number} $height
+ */
+
+@mixin size($width, $height: null) {
+    @if $height {
+        height: $height;
+        width: $width;
+    } @else {
+        height: $width;
+        width: $width;
+    }
+}
+
+// Typography
+// =============================================================================
+
+/**
+ * Sets font face.
+ *
+ * @param {String} $family
+ * @param {String} $file
+ * @param {String} $style        (normal)
+ * @param {String} $weight       (normal)
+ * @param {String} $cache-buster ()
+ */
+
+@mixin font-face(
+    $family,
+    $file,
+    $style: normal,
+    $weight: normal,
+    $cache-buster: ""
+) {
+    @font-face {
+        $cache-buster: if($cache-buster == "", "", "?" + $cache-buster);
+
+        font-family: $family;
+        font-style: $style;
+        font-weight: $weight;
+        src: url("../font/#{$file}.woff#{$cache-buster}") format("woff");
+    }
+}
+
+/**
+ * Handle links decoration.
+ *
+ * @param {Bool} $underline (true)
+ */
+
+@mixin link-underlined($underline: true) {
+    text-decoration: if($underline, underline, none);
+    &:focus,
+    &:hover {
+        text-decoration: if($underline, none, underline);
+    }
+}

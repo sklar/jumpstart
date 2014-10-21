@@ -1,0 +1,67 @@
+/**
+ * Layout.
+ * @see http://smacss.com/book/type-layout
+ * @author David Sklar <david.sklar@jumpshot.com>
+ */
+
+// =============================================================================
+// Utilities
+// =============================================================================
+
+.lay-inline         { display: inline !important; }
+.lay-inline-block   { display: inline-block !important; }
+.lay-block          { display: block !important; }
+.lay-none           { display: none; }
+
+.lay-table      { display: table; }
+.lay-row        { display: table-row; }
+.lay-row-group  { display: table-row-group; }
+.lay-cell       { display: table-cell; }
+
+.lay-rhythm {
+    @extend %rhythm;
+}
+
+/**
+ * Floats and clear.
+ */
+
+.lay-left   { float: left; }
+.lay-right  { float: right; }
+
+.lay-clear          { clear: both; }
+.lay-clear--left    { clear: left; }
+.lay-clear--right   { clear: right; }
+
+/**
+ * Microfixed group.
+ */
+
+.lay-group {
+    @extend %group;
+}
+
+/**
+ * Position.
+ */
+
+.lay-absolute   { position: absolute !important; }
+.lay-relative   { position: relative !important; }
+.lay-static     { position: static !important; }
+
+/**
+ * Overflow.
+ */
+
+// .lay-overflow--on    { overflow: visible; }
+// .lay-overflow--off   { overflow: hidden; }
+
+/**
+ * Set element off the viewport.
+ */
+
+.lay-off {
+    left: -9999px;
+    position: absolute;
+    top: -9999px;
+}
