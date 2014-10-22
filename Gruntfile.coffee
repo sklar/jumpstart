@@ -50,7 +50,8 @@ module.exports = (grunt) ->
 
 	# Load plugins.
 	# @see https://npmjs.org/package/jit-grunt
-	require('jit-grunt') grunt
+	require('jit-grunt') grunt,
+		cmq: 'grunt-combine-media-queries'
 
 	# Load plugins configuration.
 	# @see https://www.npmjs.org/package/load-grunt-config

@@ -10,6 +10,7 @@ module.exports = (grunt) ->
 		'sass'
 		'autoprefixer'
 		'concat'
+		'cmq'
 		'cssmin'
 		'dataUri'
 
@@ -33,6 +34,7 @@ module.exports = (grunt) ->
 		'sass'
 		'autoprefixer'
 		'concat'
+		'cmq'
 		'cssmin'
 		'dataUri'
 	]
