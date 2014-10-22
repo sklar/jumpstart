@@ -7,18 +7,15 @@
 
 // Set icon glyphs list.
 $icon-glyphs:
-    "\f101" facebook-square, 
-    "\f102" google-plus-square, 
-    "\f103" linkedin-square, 
-    "\f104" pinterest-square, 
-    "\f105" twitter-square
+<% for (var glyphIdx = 0; glyphIdx < glyphs.length; glyphIdx++) { %>    "\<%= codepoints[glyphIdx] %>" <%= glyphs[glyphIdx] %><% if (glyphIdx !== (glyphs.length - 1)) { %><%= ', ' %>
+<% }} %>
 ;
 
 // =============================================================================
 // Icon
 // =============================================================================
 
-@include font-face($family: "icon", $file: "icon");
+@include font-face($family: "<%= fontBaseName %>", $file: "<%= fontBaseName %>");
 
 %icon {
     display: inline-block;
@@ -49,7 +46,7 @@ $icon-glyphs:
  */
 
 @each $glyph in $icon-glyphs {
-    $modifier: icon + "--" + nth($glyph, 2);
+    $modifier: <%= classPrefix %> + "--" + nth($glyph, 2);
 
     %#{$modifier} {
         content: "#{nth($glyph, 1)}";
@@ -58,7 +55,7 @@ $icon-glyphs:
         &::before {
             @extend %#{$modifier};
         }
-        &.icon--after {
+        &.<%= classPrefix %>--after {
             &::after {
                 @extend %#{$modifier};
             }

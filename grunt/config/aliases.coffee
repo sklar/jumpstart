@@ -4,20 +4,25 @@ module.exports = (grunt) ->
 		'shell:npm'
 		'clean'
 		'shell:bower'
-		# 'copy'
+		'copy'
 
-		# 'imagemin'
+		'imagemin'
 		'sass'
 		'autoprefixer'
 		'concat'
 		'cssmin'
-		# 'dataUri'
+		'dataUri'
 
 		'assemble'
 	]
 
 	default: [
 		'watch'
+	]
+
+	fonts: [
+		'webfont'
+		'copy'
 	]
 
 	images: [
@@ -29,7 +34,7 @@ module.exports = (grunt) ->
 		'autoprefixer'
 		'concat'
 		'cssmin'
-		# 'dataUri'
+		'dataUri'
 	]
 
 	templates: [

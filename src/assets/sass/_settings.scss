@@ -166,6 +166,7 @@ $layout-model-sizes:
     width           100p,
     min-width       300,
     margin          0,
+    margin-top      100,
     padding-right   10
 ;
 
@@ -218,7 +219,7 @@ $button--primary-background: #546e7a;
 // $button--primary-background--focus: $black;
 
 // Set primary active button background.
-$button--primary-background--active: $black;
+$button--primary-background--active: darken($button--primary-background, 20%);
 
 // Set primary disabled button background.
 $button--primary-background--disable: #555;
@@ -246,7 +247,7 @@ $button--secondary-background--hover: $grey;
 $button--secondary-background--focus: $grey;
 
 // Set secondary active button background.
-$button--secondary-background--active: $grey;
+$button--secondary-background--active: darken($button--secondary-background, 20%);
 
 // Set secondary disabled button background.
 $button--secondary-background--disable: $grey--light;
@@ -323,6 +324,15 @@ $element-shadow--active: 0 6px 3px lighten($black, 90%);
 // Set disabled element shadow.
 $element-shadow--disable: none;
 
+// Component List/Feature
+// =============================================================================
+
+// Set feature figure background.
+$list-feature-figure-background: #ececec;
+
+// Set feature figure size.
+$list-feature-figure-size: 290px;
+
 // Component Form
 // =============================================================================
 
@@ -367,7 +377,7 @@ $form-element-lengths:
 $form-element-placeholder-color: $grey--light;
 
 // Set focused form element shadow.
-$form-element-shadow--focus: inset 0 0 6px 0px lighten($black, 77%);
+$form-element-shadow--focus: 0 0 6px 0px lighten($black, 77%);
 
 // Set form element height.
 $form-element-size: 29px;
@@ -405,6 +415,15 @@ $form-typeahead-field-color--suggest: $form-element-placeholder-color;
 // Set typeahead button width.
 // $form-typeahead-button-size: 130px;
 
+// Component Media
+// =============================================================================
+
+// Set media module figure horizontal indent.
+$media-figure-indent-horizontal: 40px;
+
+// Set media module figure vertical indent.
+$media-figure-indent-vertical: 20px;
+
 // Component Navigation/Primary
 // =============================================================================
 
@@ -412,7 +431,7 @@ $form-typeahead-field-color--suggest: $form-element-placeholder-color;
 $navigation-primary-item-border--active: $blue--bright;
 
 // Set primary navigation hovered item border color.
-$navigation-primary-item-border--hover: $white;
+$navigation-primary-item-border--hover: $grey;
 
 // Set primary navigation item border width.
 $navigation-primary-item-border-size: 2px;
@@ -431,6 +450,9 @@ $page-inset-indent: 20px;
 
 // Set page header background color.
 $page-head-background: #ebf0eb;
+
+// Set page header logo size.
+$page-head-logo-size: (200px, 45px);
 
 // Set page feature background.
 $page-feature-background: $white;

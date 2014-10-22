@@ -21,7 +21,6 @@
     padding: 0;
     li {
         list-style: none;
-        margin: 0;
         padding-left: 0;
     }
 }
@@ -30,7 +29,7 @@
  * List with `inline-block` lineal descendats.
  */
 
-.lst--inline {
+%lst--inline {
     @extend %lst--reset;
     > li {
         display: inline-block;
@@ -43,6 +42,28 @@
 
 .lst--stack {
     @extend %lst--reset;
+}
+
+/**
+ * Inline list with margin after each item.
+ */
+
+.lst--after {
+    @extend %lst--inline;
+    > li {
+        margin-right: 20px;
+    }
+}
+
+/**
+ * Inline list with margin before each item.
+ */
+
+.lst--before {
+    @extend %lst--inline;
+    > li {
+        margin-left: 20px;
+    }
 }
 
 /**

@@ -1,0 +1,17 @@
+<div class="grid--iso--5">
+<% for (var glyphIdx = 0; glyphIdx < glyphs.length; glyphIdx++) { var glyph = glyphs[glyphIdx] %>
+	<div class="grid_cell">
+		<p>
+			<label class="form-row--condensed lay-block" for="i-<%= glyph %>">
+				<span class="lay-block">
+					<i class="<%= classPrefix %>--<%= glyph %>" style="font-size: 39px; "></i>
+					<i class="<%= classPrefix %>--<%= glyph %>" style="font-size: 26px; "></i>
+					<i class="<%= classPrefix %>--<%= glyph %>" style="font-size: 13px; "></i>
+				</span>
+				<i class="<%= classPrefix %>--<%= glyph %> <%= classPrefix %>--before" style="font-size: 12px; "><%= glyph %></i>
+			</label>
+			<input type="text" value="<%= classPrefix %>--<%= glyph %>" id="i-<%= glyph %>" readonly />
+		</p>
+	</div>
+<% } %>
+</div>

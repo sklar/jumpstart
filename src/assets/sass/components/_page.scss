@@ -34,10 +34,9 @@
 // Page wrap
 // =============================================================================
 
-.page__wrap {
-    background-color: $page-wrap-background;
-    padding-bottom: 20px;
-}
+// .page__wrap {
+//     background-color: $page-wrap-background;
+// }
 
 // Page inset
 // =============================================================================
@@ -58,8 +57,10 @@
 
 .page__inset--primary {
     @extend %ctr--center;
-    background-color: pink;
-    width: 60%;
+
+    @media (min-width: 480px) {
+        width: 60%;
+    }
 }
 
 /**
@@ -68,8 +69,10 @@
 
 .page__inset--secondary {
     @extend %ctr--center;
-    background-color: green;
-    width: 80%;
+
+    @media (min-width: 480px) {
+        width: 80%;
+    }
 }
 
 // Page head
@@ -78,9 +81,16 @@
 .page__head {
     background-color: $page-head-background;
     padding: {
-        bottom: 10px;
-        top: 20px;
+        bottom: rhythm(2);
+        top: rhythm();
     }
+}
+
+// Page head bar
+// =============================================================================
+
+.page__head__bar {
+    @extend %group;
 }
 
 // Page head logo
@@ -88,9 +98,31 @@
 
 .page__head__logo {
     margin-top: 0;
+    position: relative;
 
     a {
         font-weight: inherit;
+        text-decoration: none;
+    }
+
+    &,
+    .lay-block {
+        @include size(
+            nth($page-head-logo-size, 1),
+            nth($page-head-logo-size, 2)
+        );
+        overflow: hidden;
+    }
+
+    .lay-block {
+        background-image: url("../gfx/head-logo.png");
+        left: 0;
+        position: absolute;
+        top: 0;
+    }
+
+    @media (min-width: 480px) {
+        float: left;
     }
 }
 
@@ -101,6 +133,7 @@
     background-color: #b0bec5;
     color: $white;
     min-height: 500px;
+    padding: rhythm(4) 0;
 }
 
 // Page foot
@@ -109,7 +142,7 @@
 .page__foot {
     @extend %group;
 
-    padding: rhythm(4) 0;
+    padding: rhythm(3) 0;
     // text-align: center;
 
     &,
@@ -126,24 +159,49 @@
     }
 }
 
+// Page foot cell
+// =============================================================================
+
+.page__foot__cell {
+    float: left;
+    width: 100 / 3 * 1%;
+
+    @media (min-width: 480px) {
+        width: 100 / 4 * 1%;
+    }
+}
+
 // Page foot primary
 // =============================================================================
 
 .page__foot__primary {
     text-transform: uppercase;
-}
 
-// Page foot primary item
-// =============================================================================
-
-.page__foot__item {
-    @extend .lst--stack;
+    @media (min-width: 480px) {
+        width: 80%;
+    }
 }
 
 // Page foot secondary
 // =============================================================================
 
 .page__foot__secondary {
+    clear: both;
     font-size: 0.8em;
+    margin-bottom: 0;
+    padding-top: rhythm();
+}
+
+// Page foot network
+// =============================================================================
+
+.page__foot__network {
+    @extend .lst--after;
+    font-size: 2em;
+
+    @media (min-width: 480px) {
+        float: right;
+        margin-right: -20px;
+    }
 }
 

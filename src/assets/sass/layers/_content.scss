@@ -28,8 +28,14 @@
     font-weight: normal;
 }
 
-.con-small { font-size: 0.8em; }
-.con-large { font-size: 1.2em; }
+.con-small  { font-size: 0.8em; }
+.con-large  { font-size: 1.2em; }
+.con-leader {
+    @include adjust-font-size-to(
+        1.4 * $base-font-size,
+        $base-line-height / $base-font-size
+    );
+}
 
 .con-bold   { font-weight: bold; }
 .con-italic { font-style: italic; }

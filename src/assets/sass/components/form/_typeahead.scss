@@ -11,6 +11,10 @@
     // border: $form-typeahead-border-size solid $form-typeahead-border;
     border-radius: $form-typeahead-border-radius;
     // height: $form-typeahead-size;
+    margin: {
+        bottom: rhythm(3);
+        top: rhythm(4);
+    }
     position: relative;
 
     [type="text"] {
@@ -128,6 +132,7 @@
     border-bottom-left-radius: 0;
     border-top-left-radius: 0;
     margin: 0;
+    width: 160px;
 
     &,
     &:active,

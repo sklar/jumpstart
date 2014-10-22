@@ -11,7 +11,7 @@
 
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
 
-	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;subset=latin,latin-ext">
+	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans:300&amp;subset=latin,latin-ext">
 	<link rel="stylesheet" type="text/css" href="{{assets}}/css/main.min.css">
 </head>
 
@@ -20,38 +20,38 @@
 		<!-- HEADER -->
 		<header role="banner" class="page__head">
 			<div class="page__inset">
-				<h1 class="page__head__logo"><a href="/styleguide/" class="lay-block">Jumpshot<span class="lay-block"></span></a></h1>
+				<div class="page__head__bar">
+					<h1 class="page__head__logo"><a href="#" class="lay-block">Jumpshot<span class="lay-block"></span></a></h1>
 
-				<nav role="navigation">
-					<ul class="nav-primary">
-						<li class="nav-primary__item"><a href="#">Features</a></li>
-						<li class="nav-primary__item"><a href="#">Pricing</a></li>
-						<li class="nav-primary__item"><a href="#">Login</a></li>
-					</ul>
-				</nav>
+					<nav role="navigation" class="nav-primary">
+						<ul>
+							<li class="nav-primary__item"><a href="#">Features</a></li><!--
+							--><li class="nav-primary__item"><a href="#">Pricing</a></li><!--
+							--><li class="nav-primary__item"><a href="#">Login</a></li>
+						</ul>
+					</nav>
+				</div>
 
 				<div class="page__inset--primary">
-					<p>What a piece of work is a man, how noble in reason, how infinite in faculty, in form and moving how express and admirable, in action how like an Angel, in apprehension how like a god!</p>
+					<p class="con-leader">What a piece of work is a man, how noble in reason, how infinite in faculty, in form and moving how express and admirable, in action how like an Angel, in apprehension how like a god!</p>
 
-					<form action="#">
+					<form action="//insights.jumpshot.com" method="get" class="form-typeahead form-typeahead--large">
 						<fieldset>
-							<legend>Domain check</legend>
+							<legend class="lay-off">Domain check</legend>
 
-							<p><label for="domain-check">Check up on your odmain now</label></p>
-							<div class="form-typeahead form-typeahead--large" style="margin-bottom: 190px; ">
-								<div class="lay-table">
-									<div class="lay-row">
-										<span class="lay-cell">
-											<span class="lay-block lay-relative">
-												<input type="text" class="form-typeahead__field--preface" placeholder="Type your domain here">
-												<input type="text" class="form-typeahead__field--suggest">
-												<input type="text" class="form-typeahead__field--input" id="domain-check">
-											</span>
+							<p class="con-center con-large"><label for="domain-check">Check up on your odmain now</label></p>
+							<div class="lay-table">
+								<div class="lay-row">
+									<span class="lay-cell">
+										<span class="lay-block lay-relative">
+											<input type="text" class="form-typeahead__field--preface" placeholder="Type your domain here">
+											<input type="text" class="form-typeahead__field--suggest">
+											<input type="text" class="form-typeahead__field--input" id="domain-check">
 										</span>
-										<span class="lay-cell">
-											<button class="form-typeahead__button btn btn--secondary">Check</button>
-										</span>
-									</div>
+									</span>
+									<span class="lay-cell">
+										<button class="form-typeahead__button btn btn--secondary">Check</button>
+									</span>
 								</div>
 							</div>
 						</fieldset>
@@ -65,15 +65,14 @@
 		</header>
 		<!-- // HEADER -->
 
-		<div class="page__inset">
-
-			<!-- MAIN -->
-			<main class="page__main">
+		<!-- MAIN -->
+		<main class="page__main">
+			<div class="page__inset">
 				{{> body}}
-			</main>
-			<!-- // MAIN -->
+			</div>
+		</main>
+		<!-- // MAIN -->
 
-		</div><!-- // .page__inset -->
 	</div><!-- // .page__wrap -->
 
 	<!-- FOOTER -->
@@ -81,29 +80,30 @@
 		<div class="page__inset">
 			<hr class="lay-none">
 
+			<ul class="page__foot__network">
+				<li><a href="#" class="icon--facebook-square"><span class="lay-off">Facebook</span></a></li><!--
+				--><li><a href="#" class="icon--twitter-square"><span class="lay-off">Twitter</span></a></li><!--
+				--><li><a href="#" class="icon--google-plus-square"><span class="lay-off">Google+</span></a></li><!--
+				--><li><a href="#" class="icon--pinterest-square"><span class="lay-off">Pinterest</span></a></li><!--
+				--><li><a href="#" class="icon--linkedin-square"><span class="lay-off">LinkedIn</span></a></li>
+			</ul>
+
 			<div class="page__foot__primary">
-				<ul class="page__foot__item">
+				<div class="page__foot__cell"></div>
+				<ul class="page__foot__cell lst--stack">
 					<li><a href="#">Blog</a></li>
 					<li><a href="#">About</a></li>
 					<li><a href="#">Careers</a></li>
 				</ul>
-				<ul class="page__foot__item">
+				<ul class="page__foot__cell lst--stack">
 					<li><a href="#">Support</a></li>
 					<li><a href="#">Contact</a></li>
 				</ul>
-				<ul class="page__foot__item">
+				<ul class="page__foot__cell lst--stack">
 					<li><a href="#">Terms</a></li>
 					<li><a href="#">Privacy</a></li>
 				</ul>
 			</div>
-
-			<ul>
-				<li><a href="#">Facebook</a></li>
-				<li><a href="#">Twitter</a></li>
-				<li><a href="#">Google+</a></li>
-				<li><a href="#">Pinterest</a></li>
-				<li><a href="#">LinkedIn</a></li>
-			</ul>
 
 			<p class="page__foot__secondary">
 				© 2014 Jumpshot Inc.

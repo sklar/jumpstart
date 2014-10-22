@@ -1,0 +1,86 @@
+/**
+ * Component Media.
+ * @author David Sklar <david.sklar@jumpshot.com>
+ */
+
+// =============================================================================
+// Media
+// =============================================================================
+
+%mda {
+    @extend %group;
+}
+
+.mda {
+    @extend .mda--left;
+}
+
+/**
+ * Modifiers.
+ */
+
+/**
+ * Media, figure aligned left.
+ */
+
+.mda--left {
+    @extend %mda;
+
+    .mda__figure {
+        float: left;
+        margin-left: 0;
+        margin-right: $media-figure-indent-horizontal;
+    }
+}
+
+/**
+ * Media, figure aligned right.
+ */
+
+.mda--right {
+    @extend %mda;
+
+    .mda__figure {
+        float: right;
+        margin-left: $media-figure-indent-horizontal;
+        margin-right: 0;
+    }
+}
+
+/**
+ * States.
+ */
+
+// .is-component-state
+
+/**
+ * Context.
+ */
+
+// .has-component
+
+// =============================================================================
+// Subcomponents
+// =============================================================================
+
+// Media module content
+// =============================================================================
+
+/**
+ * 1. Avoid shrink-wrap behaviour of `table-cell`.
+ */
+
+.mda__content {
+    display: table-cell;
+    width: 10000px; /* 1 */
+}
+
+// Media module figure
+// =============================================================================
+
+.mda__figure {
+    margin-bottom: $media-figure-indent-vertical;
+    img {
+        display: block;
+    }
+}

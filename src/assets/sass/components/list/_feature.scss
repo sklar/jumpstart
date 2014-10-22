@@ -1,0 +1,84 @@
+/**
+ * Component List/Feature.
+ * @author David Sklar <david.sklar@jumpshot.com>
+ */
+
+// =============================================================================
+// Feature list
+// =============================================================================
+
+.lst-feature {}
+
+/**
+ * Modifiers.
+ */
+
+// .component--modifier
+
+/**
+ * States.
+ */
+
+// .is-component-state
+
+/**
+ * Context.
+ */
+
+// .has-component
+
+// =============================================================================
+// Subcomponents
+// =============================================================================
+
+// Feature list item
+// =============================================================================
+
+.lst-feature__item {
+    counter-increment: lst-feature-item;
+    margin-bottom: rhythm(2);
+
+    &.mda {
+        .mda__figure {
+            margin-left: (-0.5) * $list-feature-figure-size;
+        }
+    }
+
+    &:nth-of-type(even) {
+        @extend .mda--right;
+        &.mda {
+            .mda__figure {
+                margin-left: $media-figure-indent-horizontal;
+                margin-right: (-0.5) * $list-feature-figure-size;
+            }
+        }
+    }
+}
+
+// Feature list item title
+// =============================================================================
+
+.lst-feature__item__title {
+    &::before {
+        content: "UVP#" counter(lst-feature-item) " ";
+    }
+}
+
+// Feature list figure
+// =============================================================================
+
+.lst-feature__figure {
+    @include rounded;
+    @include size($list-feature-figure-size);
+
+    background: {
+        color: $list-feature-figure-background;
+        // image: radial-gradient(circle at 2.01% 76.01%, #e6dada, transparent 100%),radial-gradient(circle at 97.99% 23.05%, #aaa, transparent 100%),radial-gradient(circle at 50% 50%, #fff, #fff 100%);
+    }
+    display: none;
+
+    @media (min-width: 480px) {
+        display: block;
+    }
+}
+
