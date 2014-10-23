@@ -9,7 +9,6 @@
 
 .nav-primary {
     font-size: 1.1em;
-    margin-bottom: rhythm(2);
 
     ul {
         @extend %lst--inline;
@@ -49,7 +48,7 @@
 .nav-primary__item {
     margin-left: nth($navigation-primary-item-indent, 1);
     text-transform: uppercase;
-    transform: translateY(50%);
+    transform: translateY(60%);
 
     &:first-child {
         margin-left: 0 !important;

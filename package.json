@@ -1,7 +1,7 @@
 {
-  "name": "wf",
+  "name": "jumpstart",
   "version": "0.1.0",
-  "title": "wf",
+  "title": "JumpStart",
   "description": "",
   "main": "./static/js/main.js",
   "company": {

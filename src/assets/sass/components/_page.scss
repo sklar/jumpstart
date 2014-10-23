@@ -100,35 +100,40 @@
 
 .page__head__bar {
     @extend %group;
+    margin-bottom: rhythm(2);
 }
 
 // Page head logo
 // =============================================================================
 
 .page__head__logo {
+    @include adjust-font-size-to(35px);
+    @include trailer(0.5);
+
     margin-top: 0;
-    position: relative;
+    // position: relative;
 
     a {
+        color: $base-color;
         font-weight: inherit;
         text-decoration: none;
     }
 
-    &,
-    .lay-block {
-        @include size(
-            nth($page-head-logo-size, 1),
-            nth($page-head-logo-size, 2)
-        );
-        overflow: hidden;
-    }
+    // &,
+    // .lay-block {
+    //     @include size(
+    //         nth($page-head-logo-size, 1),
+    //         nth($page-head-logo-size, 2)
+    //     );
+    //     overflow: hidden;
+    // }
 
-    .lay-block {
-        background-image: url("../gfx/head-logo.png");
-        left: 0;
-        position: absolute;
-        top: 0;
-    }
+    // .lay-block {
+    //     background-image: url("../gfx/head-logo.png");
+    //     left: 0;
+    //     position: absolute;
+    //     top: 0;
+    // }
 
     @media (min-width: 640px) {
         float: left;
@@ -198,12 +203,12 @@
 // Page foot secondary
 // =============================================================================
 
-.page__foot__secondary {
-    clear: both;
-    font-size: 0.8em;
-    margin-bottom: 0;
-    padding-top: rhythm();
-}
+// .page__foot__secondary {
+//     clear: both;
+//     font-size: 0.8em;
+//     margin-bottom: 0;
+//     padding-top: rhythm();
+// }
 
 // Page foot network
 // =============================================================================
