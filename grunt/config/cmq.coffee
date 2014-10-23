@@ -9,13 +9,9 @@ module.exports = (grunt) ->
 		log: true
 
 	production:
-		# src: [
-
-		# ]
 		files: [
 			expand: true
 			cwd: '<%= path.build %>/assets/css'
 			src: ['*.css', '!*.min.css']
 			dest: '<%= path.build %>/assets/css'
-			# ext: '.test.css'
 		]
