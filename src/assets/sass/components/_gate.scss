@@ -9,6 +9,7 @@
 
 .gate {
     display: table;
+    margin: rhythm(3) 0 rhythm();
 }
 
 /**
@@ -36,18 +37,44 @@
 // Gate item
 // =============================================================================
 
-.gate__item {
+%gate__item {
     display: table-cell;
+    text-align: center;
     vertical-align: top;
-    width: 45%;
+}
+
+.gate__item {
+    @extend %gate__item;
+    width: $gate-item-size;
 }
 
 // Gate space
 // =============================================================================
 
 .gate__space {
-    display: table-cell;
-    width: 10%;
+    @extend %gate__item;
+
+    position: relative;
+    width: 100 - 2 * $gate-item-size;
+
+    &::after {
+        border-left: 1px solid #b0bec5;
+        bottom: -10px;
+        content: "";
+        left: 50%;
+        position: absolute;
+        top: -30px;
+        width: 1px;
+
+    }
+    &::before {
+        background-color: $page-head-background;
+        content: "or";
+        line-height: 3;
+        padding: 10px;
+        position: relative;
+        z-index: 1;
+    }
 }
 
 
