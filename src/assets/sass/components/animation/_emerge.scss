@@ -1,0 +1,67 @@
+/**
+ * Component Animation/Emerge.
+ * @author David Sklar <david.sklar@jumpshot.com>
+ */
+
+// =============================================================================
+// Emerge animation
+// =============================================================================
+
+// .component
+
+/**
+ * Modifiers.
+ */
+
+// .component--modifier
+
+/**
+ * States.
+ */
+
+// .is-component-state
+
+/**
+ * Emerge from right to left.
+ */
+
+@keyframes emerge-to-left {
+    0% {
+        opacity: 0;
+        transform: scale(0.9) translateX(100%);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) translateX(0);
+    }
+}
+
+/**
+ * Emerge from left to right.
+ */
+
+@keyframes emerge-to-right {
+    0% {
+        opacity: 0;
+        transform: scale(0.9) translateX(-100%);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) translateX(0);
+    }
+}
+
+/**
+ * Context.
+ */
+
+// .has-component
+
+// =============================================================================
+// Subcomponents
+// =============================================================================
+
+// Subcomponent
+// =============================================================================
+
+// .component__subcomponent

@@ -254,6 +254,34 @@ $button--secondary-background--active: darken($button--secondary-background, 20%
 $button--secondary-background--disable: $grey--light;
 
 
+// Set tertiary button color.
+$button--tertiary-color: $base-color;
+
+// Set tertiary hovered button color.
+// $button--tertiary-color--hover: $white;
+
+// Set tertiary focused button color.
+// $button--tertiary-color--focus: $white;
+
+// Set tertiary active button color.
+$button--tertiary-color--active: $white;
+
+// Set tertiary button background.
+$button--tertiary-background: $white;
+
+// Set tertiary hovered button background.
+$button--tertiary-background--hover: $grey;
+
+// Set tertiary focused button background.
+$button--tertiary-background--focus: $grey;
+
+// Set tertiary active button background.
+$button--tertiary-background--active: darken($button--tertiary-background, 50%);
+
+// Set tertiary disabled button background.
+$button--tertiary-background--disable: $grey--light;
+
+
 // Set button box shadow according to `$element-shadow`.
 $button-box-shadow: 0 1px 0 0 lighten($black, 77%);
 

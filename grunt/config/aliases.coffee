@@ -14,6 +14,8 @@ module.exports = (grunt) ->
 		'cssmin'
 		'dataUri'
 
+		'uglify'
+
 		'assemble'
 	]
 
@@ -28,6 +30,10 @@ module.exports = (grunt) ->
 
 	images: [
 		'imagemin'
+	]
+
+	scripts: [
+		'uglify'
 	]
 
 	sheets: [

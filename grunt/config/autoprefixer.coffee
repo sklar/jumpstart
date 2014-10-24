@@ -1,5 +1,5 @@
 ##
-# Add vendor prefixes to CSS files.
+# Provide vendor prefixes.
 # @see https://www.npmjs.org/package/grunt-autoprefixer
 #
 

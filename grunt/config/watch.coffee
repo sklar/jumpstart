@@ -8,6 +8,14 @@ module.exports = (grunt) ->
 	options:
 		livereload: true
 
+	scripts:
+		files: [
+			'<%= path.source %>/assets/js/*.js'
+		]
+		tasks: [
+			'uglify'
+		]
+
 	sheets:
 		files: [
 			'<%= path.source %>/assets/sass/**/*.scss'

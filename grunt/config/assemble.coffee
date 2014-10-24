@@ -1,5 +1,5 @@
 ##
-# Generate Styleguide.
+# Assemble pages.
 # @see https://npmjs.org/package/assemble
 #
 

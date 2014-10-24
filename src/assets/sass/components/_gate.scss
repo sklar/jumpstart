@@ -8,8 +8,11 @@
 // =============================================================================
 
 .gate {
-    display: table;
-    margin: rhythm(3) 0 rhythm();
+    margin: rhythm(4) 0 rhythm();
+
+    @media (min-width: 500px) {
+        display: table;
+    }
 }
 
 /**
@@ -38,14 +41,50 @@
 // =============================================================================
 
 %gate__item {
-    display: table-cell;
     text-align: center;
     vertical-align: top;
+
+    @media (min-width: 500px) {
+        display: table-cell;
+    }
 }
 
 .gate__item {
     @extend %gate__item;
-    width: $gate-item-size;
+
+    @media (min-width: 500px) {
+        width: $gate-item-size;
+    }
+}
+
+/**
+ * Modifiers.
+ */
+
+/**
+ * Gate item, tour.
+ */
+
+.gate__item--tour {
+    position: relative;
+
+    &::before {
+        @extend %icon;
+        @extend %icon--reply;
+
+        bottom: -0.45em;
+        color: $white;
+        font-size: 8em;
+        left: -0.6em;
+        position: absolute;
+        transform: rotate(-90deg) scale(1.6, 0.9);
+        text-shadow: 0px 5px 5px rgba(150, 150, 150, 0.1);
+        visibility: hidden;
+
+        @media (min-width: 1000px) {
+            visibility: visible;
+        }
+    }
 }
 
 // Gate space
@@ -54,30 +93,37 @@
 .gate__space {
     @extend %gate__item;
 
+    margin-bottom: rhythm();
     position: relative;
-    width: 100 - 2 * $gate-item-size;
 
     &::after {
-        border-left: 1px solid #b0bec5;
-        bottom: -10px;
+        background-color: #b0bec5;
         content: "";
-        left: 50%;
         position: absolute;
-        top: -30px;
-        width: 1px;
+        height: 1px;
+        left: 0;
+        right: 0;
+        top: 50%;
 
     }
     &::before {
         background-color: $page-head-background;
-        content: "or";
+        content: attr(data-text);
         line-height: 3;
         padding: 10px;
         position: relative;
         z-index: 1;
     }
+
+    @media (min-width: 500px) {
+        width: 100 - 2 * $gate-item-size;
+
+        &::after {
+            bottom: -10px;
+            height: auto;
+            left: 50%;
+            top: -30px;
+            width: 1px;
+        }
+    }
 }
-
-
-
-
-

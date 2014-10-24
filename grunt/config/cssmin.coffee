@@ -1,5 +1,5 @@
 ##
-# Minify Stylesheets.
+# Minify stylesheets.
 # @see https://www.npmjs.org/package/grunt-contrib-cssmin
 #
 

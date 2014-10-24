@@ -7,7 +7,10 @@
 // Feature list
 // =============================================================================
 
-.lst-feature {}
+.lst-feature {
+    @include accelerate;
+    @include prevent-flicker;
+}
 
 /**
  * Modifiers.
@@ -44,16 +47,35 @@
         }
     }
 
+    &.is-animated {
+        animation: emerge-to-left 0.3s ease-in-out 0.2s both;
+    }
+
     &:nth-of-type(even) {
         @extend .mda--right;
+
         &.mda {
             .mda__figure {
                 margin-left: $media-figure-indent-horizontal;
                 margin-right: (-0.5) * $list-feature-figure-size;
             }
         }
+
+        &.is-animated {
+            animation-name: emerge-to-right;
+        }
     }
 }
+
+/**
+ * States.
+ */
+
+/**
+ * Feature list item, animated.
+ */
+
+.is-animated {}
 
 // Feature list item title
 // =============================================================================

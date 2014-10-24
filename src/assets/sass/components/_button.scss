@@ -138,6 +138,22 @@
 }
 
 /**
+ * Button, tertiary.
+ */
+
+.btn--tertiary {
+    background-color: $button--tertiary-background;
+    color: $button--tertiary-color;
+
+    &:hover {
+        // background-color: $button--tertiary-background--hover;
+        // color: $button--tertiary-color--hover;
+        background-color: $button--tertiary-background--active;
+        color: $button--tertiary-color--active;
+    }
+}
+
+/**
  * States.
  */
 

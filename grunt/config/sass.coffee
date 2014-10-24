@@ -1,5 +1,5 @@
 ##
-# Compile Sass using node-sass.
+# Compile files using node-sass.
 # @see https://github.com/sindresorhus/grunt-sass
 #
 
