@@ -88,10 +88,70 @@
 // =============================================================================
 
 .page__head {
+    @include accelerate;
+
     background-color: $page-head-background;
     padding: {
         bottom: rhythm(2);
         top: rhythm();
+    }
+    z-index: 1;
+
+    /**
+     * Page head, sticky.
+     */
+
+    &.is-sticky {
+        background-color: rgba($page-head-background, 0.95);
+        box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.15);
+        left: 0;
+        padding-bottom: rhythm(0.5);
+        position: fixed;
+        right: 0;
+        top: 0;
+
+        .page__head__bar {
+            margin-bottom: rhythm(0.5);
+        }
+
+        .page__head__logo {
+            @include adjust-font-size-to(26px, 1);
+            margin: 0;
+        }
+
+        .nav-primary {
+            @include adjust-font-size-to(16px, 1);
+            ul {
+                margin: 0;
+            }
+        }
+
+        .nav-primary__item {
+            transform: translateY(10%);
+        }
+
+        .con-leader,
+        .gate__item p + p,
+        .gate__item--tour,
+        .gate__space {
+            display: none;
+        }
+
+        .gate {
+            @extend %ctr--center;
+            margin: {
+                bottom: 0;
+                top: 0;
+            }
+        }
+
+        .btn {
+            display: inline-block;
+            font-size: rem(0.75 * $button-font-size--large);
+            height: 0.8 * $button-size--large;
+            position: absolute;
+            top: rhythm(0.75);
+        }
     }
 }
 

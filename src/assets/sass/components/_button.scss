@@ -69,6 +69,27 @@
 }
 
 /**
+ * Button, animated icon.
+ */
+
+.btn--animation {
+    [class*="icon"] {
+        &::before {
+            animation: shake 0.3s linear infinite paused;
+        }
+    }
+
+    &:focus,
+    &:hover {
+        [class*="icon"] {
+            &::before {
+                animation-play-state: running;
+            }
+        }
+    }
+}
+
+/**
  * Button, block.
  */
 
@@ -76,6 +97,7 @@
     display: block;
     text-align: center;
 }
+
 
 /**
  * Button, multiple lines.

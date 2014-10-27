@@ -16,6 +16,8 @@
 
 /**
  * Hides element while preserve its accessibility.
+ *
+ * @requires {Mixin} microfix
  */
 
 %reader {
@@ -24,6 +26,8 @@
 
 /**
  * Restores element visibility.
+ *
+ * @requires {Mixin} microfix
  */
 
 %reader--reset {

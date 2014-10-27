@@ -1,5 +1,5 @@
 /**
- * Component Animation/Emerge.
+ * Component Animation/Fade.
  * @author David Sklar <david.sklar@jumpshot.com>
  */
 
@@ -22,32 +22,28 @@
 // .is-component-state
 
 /**
- * Emerge from right to left.
+ * Fade in.
  */
 
-@keyframes emerge--left {
+@keyframes fade--in {
     0% {
         opacity: 0;
-        transform: scale(0.9) translateX(100%);
     }
     100% {
         opacity: 1;
-        transform: scale(1) translateX(0);
     }
 }
 
 /**
- * Emerge from left to right.
+ * Fade out.
  */
 
-@keyframes emerge--right {
+@keyframes fade--out {
     0% {
-        opacity: 0;
-        transform: scale(0.9) translateX(-100%);
+        opacity: 1;
     }
     100% {
-        opacity: 1;
-        transform: scale(1) translateX(0);
+        opacity: 0;
     }
 }
 

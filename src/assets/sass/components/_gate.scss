@@ -72,6 +72,7 @@
         @extend %icon;
         @extend %icon--reply;
 
+        animation: fade--in 0.2s ease-in 2s both;
         bottom: -0.45em;
         color: $white;
         font-size: 8em;

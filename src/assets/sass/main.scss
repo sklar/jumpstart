@@ -50,6 +50,7 @@
 @import "layers/base";
 @import "layers/content";
 @import "layers/layout";
+@import "layers/state";
 
 // Components
 // =============================================================================
@@ -90,6 +91,9 @@
 @import "components/navigation/primary";
 
 @import "components/animation/emerge";
+@import "components/animation/fade";
+@import "components/animation/pop";
+@import "components/animation/shake";
 
 @import "components/icon";
 
