@@ -81,6 +81,9 @@
 			);
 		});
 
+		// Run.
+		toggle();
+
 		/**
 		 * Add `scroll` event listener.
 		 */
