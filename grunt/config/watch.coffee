@@ -13,6 +13,7 @@ module.exports = (grunt) ->
 			'<%= path.source %>/assets/js/*.js'
 		]
 		tasks: [
+			'copy:scripts'
 			'uglify'
 		]
 

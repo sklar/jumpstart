@@ -26,7 +26,7 @@
     white-space: nowrap;
 
     &,
-    &:focus,
+    // &:focus,
     &:hover {
         color: $button-color;
         text-decoration: none;
@@ -215,7 +215,7 @@
  * Button, focused + pressed.
  */
 
-.is-btn-focused,
+// .is-btn-focused,
 .is-btn-pressed {
     &.btn--primary {
         background-color: $button--primary-background--active;

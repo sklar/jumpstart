@@ -5,10 +5,15 @@
 
 module.exports = (grunt) ->
 
-	# Copy fonts.
 	fonts:
 		expand: true
 		flatten: true
-		cwd: '<%= path.source %>/assets/font/'
+		cwd: '<%= path.source %>/assets/font'
 		src: ['**/*.{eot,svg,ttf,woff}']
 		dest: '<%= path.build %>/assets/font'
+
+	scripts:
+		expand: true
+		cwd: '<%= path.source %>/assets/js'
+		src: ['*.js', '!*.min.js']
+		dest: '<%= path.build %>/assets/js'

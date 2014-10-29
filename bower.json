@@ -5,7 +5,6 @@
   "dependencies": {
     "compass": "https://github.com/Compass/compass.git#v0.13.alpha.4",
     "normalize": "normalize.css#~3.0.1",
-    "susy": "^1.0.8",
-    "jquery-waypoints": "~2.0.5"
+    "susy": "^1.0.8"
   }
 }

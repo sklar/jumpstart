@@ -88,8 +88,6 @@
 // =============================================================================
 
 .page__head {
-    @include accelerate;
-
     background-color: $page-head-background;
     padding: {
         bottom: rhythm(2);
@@ -102,6 +100,9 @@
      */
 
     &.is-sticky {
+        @include accelerate;
+
+        animation: slide--down 0.3s cubic-bezier(0.860, 0.000, 0.070, 1.000) both;
         background-color: rgba($page-head-background, 0.95);
         box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.15);
         left: 0;
@@ -116,7 +117,9 @@
 
         .page__head__logo {
             @include adjust-font-size-to(26px, 1);
-            margin: 0;
+            @media (min-width: 640px) {
+                margin: 0;
+            }
         }
 
         .nav-primary {
@@ -138,10 +141,15 @@
         }
 
         .gate {
-            @extend %ctr--center;
             margin: {
                 bottom: 0;
                 top: 0;
+            }
+        }
+        .gate__item {
+            text-align: left;
+            @media (min-width: 640px) {
+                text-align: center;
             }
         }
 
@@ -149,8 +157,11 @@
             display: inline-block;
             font-size: rem(0.75 * $button-font-size--large);
             height: 0.8 * $button-size--large;
-            position: absolute;
-            top: rhythm(0.75);
+
+            @media (min-width: 640px) {
+                position: absolute;
+                top: rhythm(0.75);
+            }
         }
     }
 }

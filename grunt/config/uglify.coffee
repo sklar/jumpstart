@@ -12,7 +12,6 @@ module.exports = (grunt) ->
 	production:
 		files: [
 			src: [
-				'<%= path.vendor %>/jquery-waypoints/waypoints.js'
 				'<%= path.source %>/assets/js/main.js'
 			]
 			dest: '<%= path.build %>/assets/js/main.min.js'
